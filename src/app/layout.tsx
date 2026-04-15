@@ -1,27 +1,31 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: 'swap',
 });
 
-const outfit = Outfit({ 
+const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-outfit",
   display: 'swap',
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
-  title: "SmartLeaving | Strategic Industrial & Real Estate Solutions",
+  title: "Smartliving | Strategic Industrial & Real Estate Solutions",
   description: "High-end corporate services for industrial growth, real estate investments, and reliable insurance solutions. Built on trust and driven by expertise.",
   keywords: ["Industrial Services", "Real Estate Investment", "Industrial Funding", "Pharma Projects", "Insurance Solutions"],
-  authors: [{ name: "SmartLeaving Team" }],
-  viewport: "width=device-width, initial-scale=1",
+  authors: [{ name: "Smartliving Team" }],
 };
 
 export default function RootLayout({

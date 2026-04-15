@@ -90,72 +90,53 @@ export default function Home() {
   ];
 
   return (
-    <main className="bg-steel-900">
+    <main className="bg-background">
       <Hero />
-      
+
       {/* What We Do Section */}
-      <section className="section-container relative bg-steel-900">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full mesh-bg opacity-30 z-0" />
-        
+      <section className="section-container relative bg-background">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full mesh-bg opacity-10 z-0" />
+
         <div className="relative z-10">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-16"
-          >
-            <span className="subheading">What We Do</span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 tracking-tight text-white">Expertise That Delivers Results</h2>
-            <div className="w-24 h-1 bg-accent" />
-          </motion.div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, idx) => (
-              <ServiceCard key={service.title} {...service} />
+          <div className="text-center mb-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <span className="subheading">Our Expertise</span>
+              <h2 className="text-4xl md:text-6xl font-black mb-8 tracking-tighter text-premium-900">
+                Tailored Solutions for <span className="text-gradient-accent">Global Scale</span>
+              </h2>
+            </motion.div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {services.map((service, index) => (
+              <ServiceCard key={index} {...service} />
             ))}
           </div>
         </div>
       </section>
 
-      {/* Trust / Social Proof Section */}
-      <section className="py-24 bg-steel-800/50 border-y border-white/5">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12">
-          {/* Client Logos */}
-          <div className="mb-20">
-            <p className="text-center text-slate-400 text-sm font-medium uppercase tracking-[0.3em] mb-12">
-              Trusted by Industry Leaders
-            </p>
-            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
-              {clientLogos.map((logo, idx) => (
-                <motion.div
-                  key={logo}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="text-slate-500 font-bold text-lg md:text-xl tracking-tight hover:text-accent-light transition-colors cursor-default"
-                >
-                  {logo}
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          {/* Key Metrics */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-            {metrics.map((metric, idx) => (
+      {/* Trust Indicators Section */}
+      <section className="py-16 bg-premium-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-accent/5 opacity-30 z-0" />
+        <div className="section-container relative z-10">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-16 text-center">
+            {metrics.map((metric, index) => (
               <motion.div
-                key={metric.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                key={index}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="text-center"
+                transition={{ delay: index * 0.1 }}
               >
-                <div className="text-4xl md:text-5xl font-extrabold text-white mb-2 tracking-tight">
+                <div className="text-5xl md:text-7xl font-black mb-4 text-white tracking-tighter">
                   <Counter end={metric.value} suffix={metric.suffix} prefix={metric.prefix} />
                 </div>
-                <div className="text-slate-400 text-sm font-medium uppercase tracking-wider">
+                <div className="text-[10px] md:text-xs uppercase tracking-[0.4em] font-black text-slate-500">
                   {metric.label}
                 </div>
               </motion.div>
@@ -164,204 +145,155 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Case Studies Section */}
-      <section className="section-container relative bg-steel-900">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full mesh-bg opacity-20 z-0" />
-        
-        <div className="relative z-10">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+      {/* Case Studies / Projects */}
+      <section className="section-container bg-white">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-10">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="mb-16"
+            className="max-w-[800px]"
           >
-            <span className="subheading">Case Studies</span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 tracking-tight text-white">Proven Results</h2>
-            <div className="w-24 h-1 bg-accent" />
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {caseStudies.map((study, idx) => (
-              <motion.div
-                key={study.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="glass-card group cursor-pointer"
-              >
-                <div className="relative w-full aspect-[16/10] overflow-hidden rounded-2xl mb-6">
-                  <Image 
-                    src={study.image} 
-                    alt={study.title} 
-                    fill 
-                    className="object-cover group-hover:scale-110 transition-transform duration-700 opacity-70" 
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-steel-900/80 to-transparent" />
-                  <span className="absolute top-4 left-4 px-3 py-1 rounded-full bg-accent/20 text-accent-light text-xs font-medium uppercase tracking-wider">
-                    {study.category}
-                  </span>
-                </div>
-                
-                <div className="mb-4">
-                  <span className="text-accent text-xs font-medium uppercase tracking-wider mb-2 block">
-                    {study.client}
-                  </span>
-                  <h3 className="text-xl font-bold text-white tracking-tight group-hover:text-accent-light transition-colors">
-                    {study.title}
-                  </h3>
-                </div>
-                
-                <div className="space-y-4">
-                  <div>
-                    <span className="text-slate-500 text-xs font-medium uppercase tracking-wider">Challenge</span>
-                    <p className="text-slate-300 text-sm mt-1">{study.challenge}</p>
-                  </div>
-                  <div className="pt-4 border-t border-white/10">
-                    <span className="text-accent-light text-xs font-medium uppercase tracking-wider">Result</span>
-                    <p className="text-white text-sm font-semibold mt-1">{study.result}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mt-12 text-center"
-          >
-            <Link href="/contact" className="btn-outline-dark inline-flex items-center gap-3 py-3 px-8">
-              Discuss Your Project
-              <ArrowRight size={18} />
-            </Link>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Process Section */}
-      <section className="py-24 bg-steel-800/30 border-y border-white/5">
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <span className="subheading">Our Process</span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 tracking-tight text-white">How We Deliver Results</h2>
-            <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-              A proven methodology focused on outcomes, not just advice.
+            <span className="subheading">Proven Impact</span>
+            <h2 className="text-4xl md:text-6xl font-black mb-8 tracking-tighter text-premium-900">Case Studies</h2>
+            <p className="text-premium-600 text-lg md:text-xl font-medium leading-relaxed">
+              We deliver exceptional outcomes through strategic capital allocation and operational excellence.
             </p>
           </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <Link href="/industrial" className="btn-outline flex items-center gap-4 group px-12">
+              View All Case Studies <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
+            </Link>
+          </motion.div>
+        </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {processSteps.map((process, idx) => (
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          {caseStudies.map((study, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="group cursor-pointer"
+            >
+              <div className="relative aspect-[4/3] overflow-hidden rounded-[3rem] mb-8 bg-slate-50 shadow-2xl group-hover:shadow-[0_40px_80px_rgba(0,0,0,0.1)] transition-all duration-1000">
+                <Image src={study.image} alt={study.title} fill className="object-cover group-hover:scale-110 transition-transform duration-1000 opacity-90 group-hover:opacity-100" />
+                <div className="absolute inset-0 bg-premium-900/10 group-hover:bg-transparent transition-colors duration-500" />
+                <div className="absolute top-8 left-8 py-2.5 px-5 rounded-2xl bg-white/95 backdrop-blur-xl text-[10px] font-black uppercase tracking-[0.2em] text-accent shadow-xl">
+                  {study.category}
+                </div>
+              </div>
+              <h3 className="text-2xl font-black mb-4 text-premium-900 group-hover:text-accent transition-colors tracking-tight">{study.title}</h3>
+              <div className="flex items-center gap-4 mb-8">
+                <div className="w-10 h-10 rounded-2xl bg-accent/5 flex items-center justify-center text-accent">
+                  <CheckCircle2 size={20} />
+                </div>
+                <span className="text-premium-500 font-bold text-sm">{study.client}</span>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Strategic Process */}
+      <section className="py-16 bg-premium-950 text-white overflow-hidden relative">
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-accent/5 blur-[150px] rounded-full -mr-64 z-0" />
+        <div className="section-container relative z-10">
+          <div className="text-center mb-12">
+            <span className="subheading text-accent-light">The Methodology</span>
+            <h2 className="text-4xl md:text-6xl font-black mb-8 tracking-tighter text-white">Strategic Execution</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+            {processSteps.map((step, index) => (
               <motion.div
-                key={process.step}
+                key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: idx * 0.15 }}
-                className="relative"
+                transition={{ delay: index * 0.1 }}
+                className="relative group"
               >
-                <div className="glass-card text-center p-10 h-full">
-                  <div className="w-16 h-16 rounded-2xl bg-accent/20 text-accent-light flex items-center justify-center mx-auto mb-6">
-                    <process.icon size={28} />
-                  </div>
-                  <span className="text-accent text-6xl font-extrabold opacity-20 absolute top-4 right-6">
-                    {process.step}
-                  </span>
-                  <h3 className="text-2xl font-bold text-white mb-4 tracking-tight">{process.title}</h3>
-                  <p className="text-slate-400 leading-relaxed">{process.description}</p>
+                <div className="text-[10rem] font-black text-white/5 absolute -top-24 -left-8 leading-none select-none group-hover:text-accent/10 transition-colors">
+                  {step.step}
                 </div>
-                
-                {idx < processSteps.length - 1 && (
-                  <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
-                    <ArrowRight size={24} className="text-accent/50" />
+                <div className="relative z-10">
+                  <div className="w-20 h-20 rounded-[2rem] bg-white/5 text-accent-light flex items-center justify-center mb-10 border border-white/10 group-hover:bg-accent group-hover:text-white group-hover:border-accent transition-all duration-700 shadow-2xl">
+                    <step.icon size={36} strokeWidth={2.5} />
                   </div>
-                )}
+                  <h4 className="text-2xl font-black mb-4 tracking-tight text-white group-hover:text-accent-light transition-colors">{step.title}</h4>
+                  <p className="text-slate-400 leading-relaxed font-medium text-lg">
+                    {step.description}
+                  </p>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Final CTA Section */}
-      <section className="section-container relative bg-steel-900 overflow-hidden">
-        {/* Background Effects */}
-        {/* Glaring Background Effects Removed */}
-        {/* <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-accent/10 blur-[150px] rounded-full pointer-events-none" /> */}
-        {/* <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-steel-700/20 blur-[100px] rounded-full pointer-events-none" /> */}
-        
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+      {/* Why Choose Us / Pillars */}
+      <section className="section-container bg-white">
+        <div className="text-center mb-12">
+          <span className="subheading">Core Advantages</span>
+          <h2 className="text-4xl md:text-6xl font-black mb-8 tracking-tighter text-premium-900">Why Partner With Us?</h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+          {[
+            { title: "Global Insight", description: "Deep industry expertise across diverse sectors and international markets.", Icon: Award },
+            { title: "Strategic Network", description: "Direct access to elite institutional investors and strategic partners.", Icon: UserCheck },
+            { title: "Results Driven", description: "Our success is measured solely by the measurable outcomes we deliver for clients.", Icon: BarChart4 },
+            { title: "Tailored Focus", description: "We don't believe in one-size-fits-all; every solution is bespoke to your needs.", Icon: TrendingUp },
+          ].map((pillar, index) => (
+            <Pillar key={index} {...pillar} />
+          ))}
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <Testimonials />
+
+      {/* Clients Bar */}
+      <section className="py-16 bg-white/50 border-y border-slate-100 overflow-hidden">
+        <div className="section-container py-0">
+          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-30 grayscale hover:grayscale-0 transition-all duration-700">
+            {clientLogos.map((logo, i) => (
+              <span key={i} className="text-xl md:text-2xl font-extrabold tracking-tighter text-slate-900">{logo}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="section-container mb-12">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="relative z-10 text-center max-w-3xl mx-auto"
+          className="bg-slate-900 rounded-[3rem] p-12 md:p-24 text-center relative overflow-hidden shadow-2xl"
         >
-          <span className="subheading">Ready to Scale?</span>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-8 tracking-tight text-white">
-            Ready to Scale Your Next Investment?
-          </h2>
-          <p className="text-slate-400 text-xl mb-12 leading-relaxed">
-            Partner with a team that brings 10+ years of experience and $500M+ in capital facilitation. Let's turn your vision into measurable outcomes.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-5 justify-center items-center">
-            <Link href="/contact" className="btn-premium py-4 px-10 text-base">
-              Schedule a Consultation
-            </Link>
-            <Link href="/industrial" className="btn-outline py-4 px-10 text-base">
-              Explore Our Solutions
-            </Link>
+          <div className="absolute top-0 left-0 w-full h-full mesh-bg opacity-10 z-0" />
+          <div className="relative z-10 max-w-[800px] mx-auto">
+            <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-8 tracking-tight">Ready to Scale Your Vision?</h2>
+            <p className="text-slate-300 text-xl md:text-2xl font-light mb-12 leading-relaxed">
+              Let's discuss how our strategic capital and advisory can drive your industrial or real estate growth.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <Link href="/contact" className="btn-premium w-full sm:w-auto px-12 py-5 text-lg">
+                Book a Strategy Call
+              </Link>
+              <Link href="/about" className="btn-outline border-white/20 text-white hover:bg-white/10 w-full sm:w-auto px-12 py-5 text-lg">
+                Learn About Our Firm
+              </Link>
+            </div>
           </div>
         </motion.div>
-      </section>
-
-      {/* Why Choose Us Section */}
-      <section className="section-container relative bg-steel-800/50 border-t border-white/5">
-        <div className="max-w-[1400px] mx-auto relative z-10">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex flex-col lg:flex-row justify-between items-end mb-16 gap-12"
-          >
-            <div className="max-w-[600px]">
-              <span className="subheading">Why SmartLeaving</span>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 tracking-tight text-white">Your Strategic Partner</h2>
-              <p className="text-slate-400 text-lg font-light leading-relaxed">
-                We combine deep industry expertise with a commitment to long-term value and strategic growth, delivering results that transcend traditional boundaries.
-              </p>
-            </div>
-          </motion.div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { title: "Trusted Expertise", desc: "10+ years in high-value industrial and real estate sectors.", Icon: Award },
-              { title: "Strategic Funding", desc: "Access to funding up to ₹500 Crores for scalable growth.", Icon: BarChart4 },
-              { title: "Client Focused", desc: "Tailored solutions built on transparency and long-term partnerships.", Icon: UserCheck },
-              { title: "Results Driven", desc: "Proven track record with measurable outcomes for every client.", Icon: TrendingUp },
-            ].map((pillar, idx) => (
-              <motion.div
-                key={pillar.title}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: idx * 0.1 }}
-                className="p-8 rounded-3xl bg-steel-900/50 border border-white/5 hover:border-accent/30 transition-all text-left group"
-              >
-                <div className="w-12 h-12 rounded-xl bg-accent/10 text-accent-light flex items-center justify-center mb-5 group-hover:bg-accent group-hover:text-white transition-all duration-300">
-                  <pillar.Icon size={24} />
-                </div>
-                <h4 className="text-lg font-bold text-white mb-3 tracking-tight">{pillar.title}</h4>
-                <p className="text-slate-400 text-sm leading-relaxed">{pillar.desc}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
       </section>
 
       <Testimonials />

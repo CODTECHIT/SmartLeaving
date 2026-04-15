@@ -26,28 +26,28 @@ export const ServiceCard = ({ title, description, Icon, href }: ServiceCardProps
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      className="glass-card group flex flex-col h-full"
+      className="glass-card group flex flex-col h-full bg-white border-slate-100 hover:border-accent/20 transition-all duration-700"
     >
-      <div className="relative w-full aspect-[16/10] overflow-hidden rounded-2xl mb-6">
+      <div className="relative w-full aspect-[16/10] overflow-hidden rounded-[2rem] mb-8 shadow-2xl">
         <Image 
           src={imageUrl} 
           alt={title} 
           fill 
-          className="object-cover group-hover:scale-110 transition-transform duration-700 opacity-60" 
+          className="object-cover group-hover:scale-110 transition-transform duration-1000 opacity-90" 
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
-        <div className="absolute inset-0 bg-steel-900/40 group-hover:bg-transparent transition-colors duration-500" />
-        <div className="absolute bottom-4 left-4 p-3 rounded-xl bg-accent/20 backdrop-blur-md border border-white/10 text-white transition-colors group-hover:bg-accent group-hover:text-white">
-          <Icon size={24} />
+        <div className="absolute inset-0 bg-premium-900/10 group-hover:bg-transparent transition-colors duration-500" />
+        <div className="absolute top-6 left-6 p-4 rounded-2xl bg-white/95 backdrop-blur-xl border border-white/50 text-accent transition-all duration-500 group-hover:bg-accent group-hover:text-white shadow-2xl group-hover:-translate-y-1">
+          <Icon size={24} strokeWidth={2.5} />
         </div>
       </div>
       
-      <h3 className="text-xl font-bold mb-4 text-white tracking-tight group-hover:text-accent-light transition-colors">{title}</h3>
-      <p className="text-slate-400 leading-relaxed mb-6 flex-grow font-light text-sm">{description}</p>
+      <h3 className="text-2xl font-black mb-4 text-premium-900 tracking-tight group-hover:text-accent transition-colors">{title}</h3>
+      <p className="text-premium-600 leading-relaxed mb-8 flex-grow font-medium text-sm md:text-base">{description}</p>
       
-      <Link href={href} className="inline-flex items-center gap-3 text-sm font-bold text-slate-300 group-hover:gap-5 transition-all uppercase tracking-[0.2em] group/link">
-        Learn More 
-        <span className="text-accent-light group-hover/link:translate-x-1 transition-transform">→</span>
+      <Link href={href} className="inline-flex items-center gap-3 text-[10px] font-black text-premium-400 group-hover:text-accent group-hover:gap-5 transition-all uppercase tracking-[0.4em] group/link">
+        Explore Strategy 
+        <span className="text-accent group-hover/link:translate-x-1 transition-transform">→</span>
       </Link>
     </motion.div>
   );
@@ -65,13 +65,13 @@ export const Pillar = ({ title, description, Icon }: PillarProps) => {
       initial={{ opacity: 0, scale: 0.95 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
-      className="p-8 rounded-3xl bg-steel-800/30 border border-white/5 hover:border-accent/30 transition-all text-left flex flex-col items-start group"
+      className="p-10 rounded-[2.5rem] bg-white border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.02)] hover:shadow-[0_40px_80px_rgba(0,98,255,0.05)] hover:border-accent/20 transition-all duration-700 text-left flex flex-col items-start group"
     >
-      <div className="w-14 h-14 rounded-2xl bg-accent/10 text-accent-light flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-all duration-300">
-        <Icon size={28} />
+      <div className="w-16 h-16 rounded-2xl bg-accent/5 text-accent flex items-center justify-center mb-8 group-hover:bg-accent group-hover:text-white transition-all duration-500 shadow-sm group-hover:shadow-xl group-hover:-translate-y-1">
+        <Icon size={32} strokeWidth={2.5} />
       </div>
-      <h4 className="text-xl font-bold mb-3 text-white tracking-tight">{title}</h4>
-      <p className="text-slate-400 text-sm leading-relaxed font-light">{description}</p>
+      <h4 className="text-2xl font-black mb-4 text-premium-900 tracking-tight group-hover:text-accent transition-colors">{title}</h4>
+      <p className="text-premium-600 text-base leading-relaxed font-medium">{description}</p>
     </motion.div>
   );
 };

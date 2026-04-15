@@ -27,15 +27,15 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-steel-900 text-white pt-24 pb-12 border-t border-white/5 relative overflow-hidden">
+    <footer className="bg-background text-slate-900 pt-24 pb-12 border-t border-slate-200 relative overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-20">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <Link href="/" className="text-3xl font-extrabold tracking-tighter uppercase mb-8 block group">
-              Smart<span className="text-accent group-hover:text-accent-light transition-colors">Leaving</span>
+            <Link href="/" className="text-3xl font-extrabold tracking-tighter uppercase mb-8 block group text-slate-900">
+              Smart<span className="text-accent group-hover:text-accent-light transition-colors">living</span>
             </Link>
-            <p className="text-slate-400 leading-relaxed mb-10 font-light">
+            <p className="text-slate-600 leading-relaxed mb-10 font-light">
               Pioneering strategic capital advisory and industrial growth solutions.
             </p>
             <div className="flex gap-4">
@@ -44,8 +44,8 @@ const Footer = () => {
                 { icon: Twitter, href: "#" },
                 { icon: Facebook, href: "#" },
               ].map((social, i) => (
-                <a key={i} href={social.href} className="w-10 h-10 flex items-center justify-center rounded-full border border-white/10 hover:bg-accent hover:border-accent transition-all duration-300 group">
-                  <social.icon size={18} className="text-slate-400 group-hover:text-white" />
+                <a key={i} href={social.href} className="w-10 h-10 flex items-center justify-center rounded-full border border-slate-200 hover:bg-accent hover:border-accent transition-all duration-300 group">
+                  <social.icon size={18} className="text-slate-600 group-hover:text-white" />
                 </a>
               ))}
             </div>
@@ -53,11 +53,11 @@ const Footer = () => {
 
           {/* Industrial Properties */}
           <div>
-            <h4 className="text-lg font-bold mb-6 text-white tracking-tight">Industrial Properties</h4>
+            <h4 className="text-lg font-bold mb-6 text-slate-900 tracking-tight">Industrial Properties</h4>
             <ul className="space-y-3">
               {industrialLinks.map((item) => (
                 <li key={item.name}>
-                  <Link href={item.href} className="text-slate-400 hover:text-accent-light transition-all font-light text-sm">
+                  <Link href={item.href} className="text-slate-600 hover:text-accent-light transition-all font-light text-sm">
                     {item.name}
                   </Link>
                 </li>
@@ -67,11 +67,11 @@ const Footer = () => {
 
           {/* Real Estate Services */}
           <div>
-            <h4 className="text-lg font-bold mb-6 text-white tracking-tight">Real Estate</h4>
+            <h4 className="text-lg font-bold mb-6 text-slate-900 tracking-tight">Real Estate</h4>
             <ul className="space-y-3">
               {realEstateLinks.map((item) => (
                 <li key={item.name}>
-                  <Link href={item.href} className="text-slate-400 hover:text-accent-light transition-all font-light text-sm">
+                  <Link href={item.href} className="text-slate-600 hover:text-accent-light transition-all font-light text-sm">
                     {item.name}
                   </Link>
                 </li>
@@ -81,11 +81,11 @@ const Footer = () => {
 
           {/* Insurance */}
           <div>
-            <h4 className="text-lg font-bold mb-6 text-white tracking-tight">Insurance</h4>
+            <h4 className="text-lg font-bold mb-6 text-slate-900 tracking-tight">Insurance</h4>
             <ul className="space-y-3">
               {insuranceLinks.map((item) => (
                 <li key={item.name}>
-                  <Link href={item.href} className="text-slate-400 hover:text-accent-light transition-all font-light text-sm">
+                  <Link href={item.href} className="text-slate-600 hover:text-accent-light transition-all font-light text-sm">
                     {item.name}
                   </Link>
                 </li>
@@ -95,27 +95,27 @@ const Footer = () => {
 
           {/* Connect */}
           <div>
-            <h4 className="text-lg font-bold mb-6 text-white tracking-tight">Connect</h4>
+            <h4 className="text-lg font-bold mb-6 text-slate-900 tracking-tight">Connect</h4>
             <div className="space-y-4">
               <div className="flex gap-3 items-start group">
                 <MapPin size={18} className="text-accent mt-1 flex-shrink-0" />
-                <p className="text-slate-400 font-light text-sm group-hover:text-white transition-colors">Hyderabad, Telangana,<br />India - 500001</p>
+                <p className="text-slate-600 font-light text-sm group-hover:text-white transition-colors">Hyderabad, Telangana,<br />India - 500001</p>
               </div>
               <div className="flex gap-3 items-center group">
                 <Mail size={18} className="text-accent flex-shrink-0" />
-                <p className="text-slate-400 font-light text-sm group-hover:text-white transition-colors">excellence@smartleaving.com</p>
+                <p className="text-slate-600 font-light text-sm group-hover:text-white transition-colors">excellence@smartliving.com</p>
               </div>
               <div className="flex gap-3 items-center group">
                 <Phone size={18} className="text-accent flex-shrink-0" />
-                <p className="text-slate-400 font-light text-sm group-hover:text-white transition-colors">+91 91234 56789</p>
+                <p className="text-slate-600 font-light text-sm group-hover:text-white transition-colors">+91 91234 56789</p>
               </div>
             </div>
           </div>
         </div>
-        
-        <div className="border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
+
+        <div className="border-t border-slate-200 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-slate-500 text-xs font-bold uppercase tracking-[0.3em]">
-            &copy; 2026 SmartLeaving. All Rights Reserved.
+            &copy; 2026 Smartliving. All Rights Reserved.
           </p>
           <div className="flex gap-8">
             {["Privacy Policy", "Terms of Service"].map((item) => (

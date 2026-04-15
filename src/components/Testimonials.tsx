@@ -5,7 +5,7 @@ import { Quote } from "lucide-react";
 
 const testimonials = [
   {
-    quote: "SmartLeaving's strategic approach to industrial funding helped us scale our pharmaceutical production by 200% within a year. Their expertise is unmatched.",
+    quote: "Smartliving's strategic approach to industrial funding helped us scale our pharmaceutical production by 200% within a year. Their expertise is unmatched.",
     author: "Dr. Rajesh Kumar",
     role: "CEO, PharmaCore Industries"
   },
@@ -15,7 +15,7 @@ const testimonials = [
     role: "Investment Lead, Global Realty Partners"
   },
   {
-    quote: "Reliability and transparency are the hallmarks of SmartLeaving. Their insurance solutions gave our organization the security we were looking for.",
+    quote: "Reliability and transparency are the hallmarks of Smartliving. Their insurance solutions gave our organization the security we were looking for.",
     author: "Sameer Varma",
     role: "HR Director, TechFlow Systems"
   }
@@ -32,17 +32,17 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <section className="py-24 bg-steel-800/30 text-white relative overflow-hidden border-t border-white/5">
-      <div className="absolute top-0 left-0 w-full h-full mesh-bg opacity-20 pointer-events-none" />
+    <section className="py-24 bg-background text-slate-900 relative overflow-hidden border-t border-slate-200">
+      <div className="absolute top-0 left-0 w-full h-full mesh-bg opacity-10 pointer-events-none" />
       <div className="section-container relative z-10 text-center">
         <span className="subheading mb-8">Client Success</span>
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-16 tracking-tight text-white">What Our Clients Say</h2>
-        
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-16 tracking-tight text-slate-900">What Our Clients Say</h2>
+
         <div className="max-w-[1000px] mx-auto min-h-[250px] relative flex flex-col items-center">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 -mt-16 text-accent/20">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 -mt-16 text-accent/10">
             <Quote size={120} />
           </div>
-          
+
           <AnimatePresence mode="wait">
             <motion.div
               key={index}
@@ -52,11 +52,11 @@ const Testimonials = () => {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="flex flex-col items-center"
             >
-              <p className="text-xl md:text-3xl font-light leading-relaxed text-slate-300 mb-10 italic">
+              <p className="text-xl md:text-3xl font-light leading-relaxed text-slate-700 mb-10 italic">
                 "{testimonials[index].quote}"
               </p>
               <div className="flex flex-col items-center">
-                <span className="text-xl font-bold text-white tracking-tight">
+                <span className="text-xl font-bold text-slate-900 tracking-tight">
                   {testimonials[index].author}
                 </span>
                 <span className="text-accent-light text-sm uppercase tracking-[0.2em] font-medium mt-2">
