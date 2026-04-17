@@ -32,7 +32,7 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <section className="py-24 bg-background text-slate-900 relative overflow-hidden border-t border-slate-200">
+    <section className="py-12 md:py-16 bg-background text-slate-900 relative overflow-hidden border-t border-slate-200">
       <div className="absolute top-0 left-0 w-full h-full mesh-bg opacity-10 pointer-events-none" />
       <div className="section-container relative z-10 text-center">
         <span className="subheading mb-8">Client Success</span>

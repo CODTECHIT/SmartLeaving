@@ -1,8 +1,40 @@
 "use client";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Trees, Landmark, Map, Home, Building, RefreshCw } from "lucide-react";
+import { Trees, Landmark, Map, Home, Building, RefreshCw, Send, Phone as PhoneIcon, User, Layers, IndianRupee, MapPin as MapPinIcon, MessageSquare } from "lucide-react";
 
 export default function RealEstatePage() {
+  const [formData, setFormData] = useState({
+    name: "",
+    mobile: "",
+    landType: "",
+    cost: "",
+    location: "",
+    message: ""
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    const whatsappNumber = "919123456789"; // Replace with actual number
+    const message = `*Real Estate Requirement Inquiry*
+--------------------------------
+*Name:* ${formData.name}
+*Mobile:* ${formData.mobile}
+*Type of Land:* ${formData.landType}
+*Approximate Cost:* ${formData.cost}
+*Location:* ${formData.location}
+*Additional Notes:* ${formData.message || "None"}`;
+
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, "_blank");
+  };
+
   const categories = [
     { title: "Farmlands", description: "Premium agricultural lands suitable for long-term investment and sustainable returns.", Icon: Trees },
     { title: "Commercial Lands", description: "Strategically located commercial plots ideal for business development and high ROI.", Icon: Landmark },
@@ -22,15 +54,14 @@ export default function RealEstatePage() {
           className="mb-16"
         >
           <span className="subheading">Exclusive Portfolio</span>
-          <h1 className="text-5xl md:text-8xl font-black mb-10 tracking-tighter text-premium-900 leading-none">Real Estate <br /><span className="text-gradient-accent">Opportunities</span></h1>
+          <h1 className="text-4xl md:text-8xl font-black mb-10 tracking-tighter text-premium-900 leading-[1.1] md:leading-none">Real Estate <br /><span className="text-gradient-accent">Opportunities</span></h1>
           <p className="text-premium-600 max-w-[800px] text-xl md:text-2xl font-medium leading-relaxed">
             Curating a diversified portfolio of high-value properties selected specifically to meet modern investment goals and premium lifestyle requirements.
           </p>
         </motion.div>
 
-        {/* Real Estate Services Grid */}
-        <div className="mb-10">
-          <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tighter text-premium-900 border-b border-slate-100 pb-4">Real Estate Services</h2>
+        <div className="mb-12">
+          <h2 className="text-2xl md:text-5xl font-black mb-6 tracking-tighter text-premium-900 border-b border-slate-100 pb-4">Real Estate Services</h2>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-16">
@@ -52,18 +83,137 @@ export default function RealEstatePage() {
           ))}
         </div>
 
-        {/* CTA Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-16 text-center pb-16"
-        >
-          <h3 className="text-3xl font-black text-premium-900 mb-10 tracking-tighter">Looking for a specific property type?</h3>
-          <a href="/contact" className="btn-premium inline-block py-5 px-12 text-lg">
-            Discuss Your Requirements
-          </a>
-        </motion.div>
+        {/* Requirements Form Section */}
+        <div className="mb-16 pt-16 border-t border-slate-100">
+          <div className="max-w-[900px] mx-auto">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <span className="subheading mx-auto">Custom Property</span>
+              <h2 className="text-4xl md:text-6xl font-black text-premium-900 tracking-tighter mb-4">Share Your Requirements</h2>
+              <p className="text-premium-600 text-lg md:text-xl font-medium">
+                Share your requirements here, and we’ll get back to you with the best solution
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="glass-card !p-8 md:!p-12 shadow-2xl relative overflow-hidden"
+            >
+              <div className="absolute top-0 left-0 w-2 h-full bg-accent" />
+              
+              <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="space-y-2">
+                  <label className="text-sm font-bold uppercase tracking-wider text-premium-400 flex items-center gap-2">
+                    <User size={14} className="text-accent" /> Name
+                  </label>
+                  <input 
+                    type="text" 
+                    name="name"
+                    required
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    placeholder="Enter your full name" 
+                    className="w-full bg-slate-50 border border-slate-100 rounded-2xl p-5 focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all font-medium"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-sm font-bold uppercase tracking-wider text-premium-400 flex items-center gap-2">
+                    <PhoneIcon size={14} className="text-accent" /> Mobile Number
+                  </label>
+                  <input 
+                    type="tel" 
+                    name="mobile"
+                    required
+                    value={formData.mobile}
+                    onChange={handleInputChange}
+                    placeholder="Enter mobile number" 
+                    className="w-full bg-slate-50 border border-slate-100 rounded-2xl p-5 focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all font-medium"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-sm font-bold uppercase tracking-wider text-premium-400 flex items-center gap-2">
+                    <Layers size={14} className="text-accent" /> Type of Land
+                  </label>
+                  <input 
+                    type="text" 
+                    name="landType"
+                    required
+                    value={formData.landType}
+                    onChange={handleInputChange}
+                    placeholder="e.g. Farmland, Open Plot" 
+                    className="w-full bg-slate-50 border border-slate-100 rounded-2xl p-5 focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all font-medium"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-sm font-bold uppercase tracking-wider text-premium-400 flex items-center gap-2">
+                    <IndianRupee size={14} className="text-accent" /> Approximate Cost
+                  </label>
+                  <input 
+                    type="text" 
+                    name="cost"
+                    required
+                    value={formData.cost}
+                    onChange={handleInputChange}
+                    placeholder="Estimated budget" 
+                    className="w-full bg-slate-50 border border-slate-100 rounded-2xl p-5 focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all font-medium"
+                  />
+                </div>
+
+                <div className="md:col-span-2 space-y-2">
+                  <label className="text-sm font-bold uppercase tracking-wider text-premium-400 flex items-center gap-2">
+                    <MapPinIcon size={14} className="text-accent" /> Location of Property
+                  </label>
+                  <input 
+                    type="text" 
+                    name="location"
+                    required
+                    value={formData.location}
+                    onChange={handleInputChange}
+                    placeholder="City or region" 
+                    className="w-full bg-slate-50 border border-slate-100 rounded-2xl p-5 focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all font-medium"
+                  />
+                </div>
+
+                <div className="md:col-span-2 space-y-2">
+                  <label className="text-sm font-bold uppercase tracking-wider text-premium-400 flex items-center gap-2">
+                    <MessageSquare size={14} className="text-accent" /> Write us if any
+                  </label>
+                  <textarea 
+                    name="message"
+                    rows={4}
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    placeholder="Any specific requirements or notes..." 
+                    className="w-full bg-slate-50 border border-slate-100 rounded-2xl p-5 focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all font-medium resize-none"
+                  />
+                </div>
+
+                <div className="md:col-span-2 pt-4">
+                  <button 
+                    type="submit"
+                    className="w-full btn-premium py-6 text-xl flex items-center justify-center gap-4 group"
+                  >
+                    Send to WhatsApp
+                    <Send size={24} className="group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform duration-500" />
+                  </button>
+                </div>
+              </form>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* Removed CTA Section */}
+
       </section>
     </main>
   );

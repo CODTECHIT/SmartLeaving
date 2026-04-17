@@ -28,7 +28,7 @@ export const ServiceCard = ({ title, description, Icon, href }: ServiceCardProps
       viewport={{ once: true }}
       className="glass-card group flex flex-col h-full bg-white border-slate-100 hover:border-accent/20 transition-all duration-700"
     >
-      <div className="relative w-full aspect-[16/10] overflow-hidden rounded-[2rem] mb-8 shadow-2xl">
+      <div className="relative w-full aspect-[16/10] overflow-hidden rounded-[2rem] mb-6 shadow-2xl">
         <Image 
           src={imageUrl} 
           alt={title} 
@@ -43,7 +43,7 @@ export const ServiceCard = ({ title, description, Icon, href }: ServiceCardProps
       </div>
       
       <h3 className="text-2xl font-black mb-4 text-premium-900 tracking-tight group-hover:text-accent transition-colors">{title}</h3>
-      <p className="text-premium-600 leading-relaxed mb-8 flex-grow font-medium text-sm md:text-base">{description}</p>
+      <p className="text-premium-600 leading-relaxed mb-6 flex-grow font-medium text-sm md:text-base">{description}</p>
       
       <Link href={href} className="inline-flex items-center gap-3 text-[10px] font-black text-premium-400 group-hover:text-accent group-hover:gap-5 transition-all uppercase tracking-[0.4em] group/link">
         Explore Strategy 
@@ -67,7 +67,7 @@ export const Pillar = ({ title, description, Icon }: PillarProps) => {
       viewport={{ once: true }}
       className="p-10 rounded-[2.5rem] bg-white border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.02)] hover:shadow-[0_40px_80px_rgba(0,98,255,0.05)] hover:border-accent/20 transition-all duration-700 text-left flex flex-col items-start group"
     >
-      <div className="w-16 h-16 rounded-2xl bg-accent/5 text-accent flex items-center justify-center mb-8 group-hover:bg-accent group-hover:text-white transition-all duration-500 shadow-sm group-hover:shadow-xl group-hover:-translate-y-1">
+      <div className="w-16 h-16 rounded-2xl bg-accent/5 text-accent flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-white transition-all duration-500 shadow-sm group-hover:shadow-xl group-hover:-translate-y-1">
         <Icon size={32} strokeWidth={2.5} />
       </div>
       <h4 className="text-2xl font-black mb-4 text-premium-900 tracking-tight group-hover:text-accent transition-colors">{title}</h4>

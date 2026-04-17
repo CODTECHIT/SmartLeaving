@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FileText, X, ChevronDown, BarChart3, TrendingUp, Check, Download } from "lucide-react";
+import { FileText, X, ChevronDown, BarChart3, TrendingUp, Check, Download, Send, Phone as PhoneIcon, User, Briefcase, IndianRupee, MapPin as MapPinIcon, MessageSquare } from "lucide-react";
 import Image from "next/image";
 
 const projectData = [
@@ -27,6 +27,37 @@ const projectData = [
 
 export default function IndustrialPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [formData, setFormData] = useState({
+    name: "",
+    mobile: "",
+    industryType: "",
+    cost: "",
+    location: "",
+    message: ""
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    const whatsappNumber = "919123456789"; // Replace with actual number
+    const message = `*Industry Requirement Inquiry*
+--------------------------------
+*Name:* ${formData.name}
+*Mobile:* ${formData.mobile}
+*Industry Type:* ${formData.industryType}
+*Cost of Industry:* ${formData.cost}
+*Location:* ${formData.location}
+*Additional Notes:* ${formData.message || "None"}`;
+
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, "_blank");
+  };
+
 
   const faqs = [
     {
@@ -49,15 +80,15 @@ export default function IndustrialPage() {
           className="mb-16"
         >
           <span className="subheading">Facilitating Growth</span>
-          <h1 className="text-5xl md:text-8xl font-black mb-10 tracking-tighter text-premium-900 leading-none">Industrial <br /><span className="text-gradient-accent">Infrastructure</span></h1>
+          <h1 className="text-4xl md:text-8xl font-black mb-10 tracking-tighter text-premium-900 leading-[1.1] md:leading-none">Industrial <br /><span className="text-gradient-accent">Infrastructure</span></h1>
           <p className="text-premium-600 max-w-[800px] text-xl md:text-2xl font-medium leading-relaxed">
             Connecting investors and enterprises with high-value industrial projects, specializing in pharmaceutical and strategic manufacturing sectors.
           </p>
         </motion.div>
 
         {/* Industrial Properties Section */}
-        <div className="mb-10">
-          <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tighter text-premium-900 border-b border-slate-100 pb-4">Industrial Properties</h2>
+        <div className="mb-12">
+          <h2 className="text-2xl md:text-5xl font-black mb-6 tracking-tighter text-premium-900 border-b border-slate-100 pb-4">Industrial Properties</h2>
         </div>
 
         <div className="grid grid-cols-1 gap-12 mb-20">
@@ -68,7 +99,7 @@ export default function IndustrialPage() {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="glass-card group flex flex-col lg:flex-row gap-16 items-center"
+              className="glass-card group flex flex-col lg:flex-row gap-10 lg:gap-16 items-center"
             >
               <div className="relative w-full lg:w-[500px] aspect-video overflow-hidden rounded-[2.5rem] bg-slate-50 shadow-2xl">
                 <Image src="/industrial.png" alt={project.title} fill className="object-cover opacity-90 group-hover:scale-110 transition-transform duration-1000" />
@@ -94,8 +125,8 @@ export default function IndustrialPage() {
         </div>
 
         {/* Funding Section */}
-        <div className="mb-10">
-          <h2 className="text-3xl md:text-5xl font-black mb-6 tracking-tighter text-premium-900 border-b border-slate-100 pb-4">Funding Solutions</h2>
+        <div className="mb-12">
+          <h2 className="text-2xl md:text-5xl font-black mb-6 tracking-tighter text-premium-900 border-b border-slate-100 pb-4">Funding Solutions</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
@@ -139,6 +170,136 @@ export default function IndustrialPage() {
             </div>
           </div>
         </div>
+
+        {/* Requirements Form Section */}
+        <div className="mb-16 pt-16 border-t border-slate-100">
+          <div className="max-w-[900px] mx-auto">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <span className="subheading mx-auto">Get Started</span>
+              <h2 className="text-4xl md:text-6xl font-black text-premium-900 tracking-tighter mb-4">Share Your Requirements</h2>
+              <p className="text-premium-600 text-lg md:text-xl font-medium">
+                Share your requirements here, and we’ll get back to you with the best solution
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="glass-card !p-8 md:!p-12 shadow-2xl relative overflow-hidden"
+            >
+              <div className="absolute top-0 left-0 w-2 h-full bg-accent" />
+              
+              <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="space-y-2">
+                  <label className="text-sm font-bold uppercase tracking-wider text-premium-400 flex items-center gap-2">
+                    <User size={14} className="text-accent" /> Name
+                  </label>
+                  <input 
+                    type="text" 
+                    name="name"
+                    required
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    placeholder="Enter your full name" 
+                    className="w-full bg-slate-50 border border-slate-100 rounded-2xl p-5 focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all font-medium"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-sm font-bold uppercase tracking-wider text-premium-400 flex items-center gap-2">
+                    <PhoneIcon size={14} className="text-accent" /> Mobile Number
+                  </label>
+                  <input 
+                    type="tel" 
+                    name="mobile"
+                    required
+                    value={formData.mobile}
+                    onChange={handleInputChange}
+                    placeholder="Enter mobile number" 
+                    className="w-full bg-slate-50 border border-slate-100 rounded-2xl p-5 focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all font-medium"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-sm font-bold uppercase tracking-wider text-premium-400 flex items-center gap-2">
+                    <Briefcase size={14} className="text-accent" /> Industry Type
+                  </label>
+                  <input 
+                    type="text" 
+                    name="industryType"
+                    required
+                    value={formData.industryType}
+                    onChange={handleInputChange}
+                    placeholder="e.g. Pharmaceutical, Manufacturing" 
+                    className="w-full bg-slate-50 border border-slate-100 rounded-2xl p-5 focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all font-medium"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-sm font-bold uppercase tracking-wider text-premium-400 flex items-center gap-2">
+                    <IndianRupee size={14} className="text-accent" /> Cost of Industry
+                  </label>
+                  <input 
+                    type="text" 
+                    name="cost"
+                    required
+                    value={formData.cost}
+                    onChange={handleInputChange}
+                    placeholder="Estimated budget or cost" 
+                    className="w-full bg-slate-50 border border-slate-100 rounded-2xl p-5 focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all font-medium"
+                  />
+                </div>
+
+                <div className="md:col-span-2 space-y-2">
+                  <label className="text-sm font-bold uppercase tracking-wider text-premium-400 flex items-center gap-2">
+                    <MapPinIcon size={14} className="text-accent" /> Location of Industry
+                  </label>
+                  <input 
+                    type="text" 
+                    name="location"
+                    required
+                    value={formData.location}
+                    onChange={handleInputChange}
+                    placeholder="City or region" 
+                    className="w-full bg-slate-50 border border-slate-100 rounded-2xl p-5 focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all font-medium"
+                  />
+                </div>
+
+                <div className="md:col-span-2 space-y-2">
+                  <label className="text-sm font-bold uppercase tracking-wider text-premium-400 flex items-center gap-2">
+                    <MessageSquare size={14} className="text-accent" /> Write us if any
+                  </label>
+                  <textarea 
+                    name="message"
+                    rows={4}
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    placeholder="Any specific requirements or notes..." 
+                    className="w-full bg-slate-50 border border-slate-100 rounded-2xl p-5 focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-all font-medium resize-none"
+                  />
+                </div>
+
+                <div className="md:col-span-2 pt-4">
+                  <button 
+                    type="submit"
+                    className="w-full btn-premium py-6 text-xl flex items-center justify-center gap-4 group"
+                  >
+                    Send to WhatsApp
+                    <Send size={24} className="group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform duration-500" />
+                  </button>
+                </div>
+              </form>
+            </motion.div>
+          </div>
+        </div>
+
 
         {/* FAQ Section */}
         <div className="max-w-[1000px] mx-auto pt-16 border-t border-slate-100">

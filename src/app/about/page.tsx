@@ -27,7 +27,7 @@ export default function AboutPage() {
           className="mb-16"
         >
           <span className="subheading">Who We Are</span>
-          <h1 className="text-5xl md:text-8xl font-black mb-10 tracking-tighter text-premium-900 leading-none">
+          <h1 className="text-4xl md:text-8xl font-black mb-10 tracking-tighter text-premium-900 leading-[1.1] md:leading-none">
             Building Futures Through <br /><span className="text-gradient-accent">Strategic Partnership</span>
           </h1>
           <p className="text-premium-600 max-w-[800px] text-xl md:text-2xl font-medium leading-relaxed">
@@ -129,7 +129,7 @@ export default function AboutPage() {
         </div>
 
         <div className="text-center pb-16">
-          <h2 className="text-4xl md:text-7xl font-black mb-8 tracking-tighter text-premium-900 leading-none">Ready to Partner <br />with Us?</h2>
+          <h2 className="text-3xl md:text-7xl font-black mb-8 tracking-tighter text-premium-900 leading-[1.1]">Ready to Partner <br />with Us?</h2>
           <p className="text-premium-600 text-xl md:text-2xl mb-12 max-w-3xl mx-auto font-medium">
             Let's discuss how we can help you achieve your business goals with strategic capital and advisory.
           </p>

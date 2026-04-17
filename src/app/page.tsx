@@ -106,7 +106,7 @@ export default function Home() {
               transition={{ duration: 0.8 }}
             >
               <span className="subheading">Our Expertise</span>
-              <h2 className="text-4xl md:text-6xl font-black mb-8 tracking-tighter text-premium-900">
+              <h2 className="text-3xl md:text-6xl font-black mb-8 tracking-tighter text-premium-900 leading-tight">
                 Tailored Solutions for <span className="text-gradient-accent">Global Scale</span>
               </h2>
             </motion.div>
@@ -121,10 +121,10 @@ export default function Home() {
       </section>
 
       {/* Trust Indicators Section */}
-      <section className="py-16 bg-premium-900 text-white relative overflow-hidden">
+      <section className="py-12 bg-premium-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-accent/5 opacity-30 z-0" />
-        <div className="section-container relative z-10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-16 text-center">
+        <div className="section-container relative z-10 py-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-16 text-center">
             {metrics.map((metric, index) => (
               <motion.div
                 key={index}
@@ -133,10 +133,10 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <div className="text-5xl md:text-7xl font-black mb-4 text-white tracking-tighter">
+                <div className="text-3xl md:text-5xl font-black mb-3 text-white tracking-tighter">
                   <Counter end={metric.value} suffix={metric.suffix} prefix={metric.prefix} />
                 </div>
-                <div className="text-[10px] md:text-xs uppercase tracking-[0.4em] font-black text-slate-500">
+                <div className="text-[9px] md:text-[10px] uppercase tracking-[0.3em] font-black text-slate-500">
                   {metric.label}
                 </div>
               </motion.div>
@@ -155,7 +155,7 @@ export default function Home() {
             className="max-w-[800px]"
           >
             <span className="subheading">Proven Impact</span>
-            <h2 className="text-4xl md:text-6xl font-black mb-8 tracking-tighter text-premium-900">Case Studies</h2>
+            <h2 className="text-3xl md:text-6xl font-black mb-8 tracking-tighter text-premium-900 leading-tight">Case Studies</h2>
             <p className="text-premium-600 text-lg md:text-xl font-medium leading-relaxed">
               We deliver exceptional outcomes through strategic capital allocation and operational excellence.
             </p>
@@ -201,12 +201,12 @@ export default function Home() {
       </section>
 
       {/* Strategic Process */}
-      <section className="py-16 bg-premium-950 text-white overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-accent/5 blur-[150px] rounded-full -mr-64 z-0" />
+      <section className="py-20 bg-premium-950 text-white overflow-hidden relative">
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-accent/5 blur-[150px] rounded-full z-0" />
         <div className="section-container relative z-10">
           <div className="text-center mb-12">
             <span className="subheading text-accent-light">The Methodology</span>
-            <h2 className="text-4xl md:text-6xl font-black mb-8 tracking-tighter text-white">Strategic Execution</h2>
+            <h2 className="text-3xl md:text-6xl font-black mb-8 tracking-tighter text-white leading-tight">Strategic Execution</h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
@@ -219,7 +219,7 @@ export default function Home() {
                 transition={{ delay: index * 0.1 }}
                 className="relative group"
               >
-                <div className="text-[10rem] font-black text-white/5 absolute -top-24 -left-8 leading-none select-none group-hover:text-accent/10 transition-colors">
+                <div className="text-[6rem] md:text-[10rem] font-black text-white/5 absolute -top-12 md:-top-24 -left-4 md:-left-8 leading-none select-none group-hover:text-accent/10 transition-colors">
                   {step.step}
                 </div>
                 <div className="relative z-10">
@@ -241,7 +241,7 @@ export default function Home() {
       <section className="section-container bg-white">
         <div className="text-center mb-12">
           <span className="subheading">Core Advantages</span>
-          <h2 className="text-4xl md:text-6xl font-black mb-8 tracking-tighter text-premium-900">Why Partner With Us?</h2>
+          <h2 className="text-3xl md:text-6xl font-black mb-8 tracking-tighter text-premium-900 leading-tight">Why Partner With Us?</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -260,7 +260,7 @@ export default function Home() {
       <Testimonials />
 
       {/* Clients Bar */}
-      <section className="py-16 bg-white/50 border-y border-slate-100 overflow-hidden">
+      <section className="py-10 bg-white/50 border-y border-slate-100 overflow-hidden">
         <div className="section-container py-0">
           <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-30 grayscale hover:grayscale-0 transition-all duration-700">
             {clientLogos.map((logo, i) => (
@@ -271,7 +271,7 @@ export default function Home() {
       </section>
 
       {/* Final CTA */}
-      <section className="section-container mb-12">
+      <section className="section-container">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -280,7 +280,7 @@ export default function Home() {
         >
           <div className="absolute top-0 left-0 w-full h-full mesh-bg opacity-10 z-0" />
           <div className="relative z-10 max-w-[800px] mx-auto">
-            <h2 className="text-4xl md:text-6xl font-extrabold text-white mb-8 tracking-tight">Ready to Scale Your Vision?</h2>
+            <h2 className="text-3xl md:text-6xl font-black text-white mb-8 tracking-tight leading-tight">Ready to Scale Your Vision?</h2>
             <p className="text-slate-300 text-xl md:text-2xl font-light mb-12 leading-relaxed">
               Let's discuss how our strategic capital and advisory can drive your industrial or real estate growth.
             </p>
@@ -295,8 +295,6 @@ export default function Home() {
           </div>
         </motion.div>
       </section>
-
-      <Testimonials />
     </main>
   );
 }
