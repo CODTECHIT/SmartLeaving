@@ -5,6 +5,8 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
+import Image from "next/image";
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -31,20 +33,25 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`glass-nav ${isScrolled ? "glass-nav-scrolled" : "py-3 md:py-4"}`}>
+    <nav className={`glass-nav ${isScrolled ? "glass-nav-scrolled" : ""}`}>
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 w-full flex justify-between items-center">
-        <Link href="/" className="text-2xl md:text-3xl font-black tracking-tighter text-premium-900 uppercase group flex items-center gap-2">
-          <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center text-white text-xl">S</div>
-          <span>Smart<span className="text-accent group-hover:text-accent-light transition-colors">living</span></span>
+        <Link href="/" className="relative h-12 md:h-16 w-48 md:w-64 group">
+          <Image
+            src="/logo.jpeg"
+            alt="Smartliving Logo"
+            fill
+            className="object-contain"
+            priority
+          />
         </Link>
 
         {/* Desktop Menu - Navigation Links */}
-        <div className="hidden md:flex gap-10 items-center">
+        <div className="hidden md:flex gap-12 items-center">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className={`text-[13px] font-bold uppercase tracking-widest transition-all relative after:absolute after:bottom-[-4px] after:left-0 after:h-[2px] after:bg-accent after:transition-all ${pathname === link.href ? "text-accent after:w-full" : "text-premium-600 hover:text-accent after:w-0 hover:after:w-full"
+              className={`text-[12px] font-black uppercase tracking-[0.3em] transition-all relative after:absolute after:bottom-[-6px] after:left-0 after:h-[1px] after:bg-slate-900 after:transition-all ${pathname === link.href ? "text-slate-900 after:w-full" : "text-slate-600 hover:text-slate-900 after:w-0 hover:after:w-full"
                 }`}
             >
               {link.name}
@@ -58,7 +65,11 @@ const Navbar = () => {
             <Link
               key={btn.name}
               href={btn.href}
-              className="text-xs font-bold uppercase tracking-tighter px-5 py-2.5 rounded-xl border border-slate-200 hover:border-accent hover:text-accent transition-all text-premium-900 whitespace-nowrap"
+              className={`text-[11px] font-black uppercase tracking-wider px-6 py-3.5 rounded-xl transition-all duration-500 whitespace-nowrap shadow-sm border-2 ${
+                btn.href === "/industrial" ? "bg-emerald-50 border-emerald-100 text-emerald-900 hover:bg-emerald-600 hover:text-white hover:border-emerald-600" :
+                btn.href === "/real-estate" ? "bg-amber-50 border-amber-100 text-amber-900 hover:bg-amber-600 hover:text-white hover:border-amber-600" :
+                "bg-blue-50 border-blue-100 text-blue-900 hover:bg-blue-600 hover:text-white hover:border-blue-600"
+              }`}
             >
               {btn.name}
             </Link>

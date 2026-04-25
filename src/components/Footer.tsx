@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Linkedin, Twitter, Facebook, Mail, Phone, MapPin } from "lucide-react";
 
 const Footer = () => {
@@ -27,15 +28,20 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-background text-slate-900 pt-24 pb-12 border-t border-slate-200 relative overflow-hidden">
+    <footer className="bg-background text-foreground pt-24 pb-12 border-t border-[rgba(var(--foreground-rgb),0.05)] relative overflow-hidden">
       <div className="max-w-[1200px] mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-20">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <Link href="/" className="text-3xl font-extrabold tracking-tighter uppercase mb-8 block group text-slate-900">
-              Smart<span className="text-accent group-hover:text-accent-light transition-colors">living</span>
+            <Link href="/" className="relative h-16 w-60 mb-8 block group">
+              <Image
+                src="/logo.jpeg"
+                alt="Smartliving Logo"
+                fill
+                className="object-contain"
+              />
             </Link>
-            <p className="text-slate-600 leading-relaxed mb-10 font-light">
+            <p className="text-secondary leading-relaxed mb-10 font-light text-sm">
               Pioneering strategic capital advisory and industrial growth solutions.
             </p>
             <div className="flex gap-4">
@@ -57,7 +63,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {industrialLinks.map((item) => (
                 <li key={item.name}>
-                  <Link href={item.href} className="text-slate-600 hover:text-accent-light transition-all font-light text-sm">
+                  <Link href={item.href} className="text-slate-600 hover:text-slate-950 transition-all font-light text-sm">
                     {item.name}
                   </Link>
                 </li>
@@ -71,7 +77,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {realEstateLinks.map((item) => (
                 <li key={item.name}>
-                  <Link href={item.href} className="text-slate-600 hover:text-accent-light transition-all font-light text-sm">
+                  <Link href={item.href} className="text-slate-600 hover:text-slate-950 transition-all font-light text-sm">
                     {item.name}
                   </Link>
                 </li>
@@ -85,7 +91,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {insuranceLinks.map((item) => (
                 <li key={item.name}>
-                  <Link href={item.href} className="text-slate-600 hover:text-accent-light transition-all font-light text-sm">
+                  <Link href={item.href} className="text-slate-600 hover:text-slate-950 transition-all font-light text-sm">
                     {item.name}
                   </Link>
                 </li>
@@ -99,15 +105,15 @@ const Footer = () => {
             <div className="space-y-4">
               <div className="flex gap-3 items-start group">
                 <MapPin size={18} className="text-accent mt-1 flex-shrink-0" />
-                <p className="text-slate-600 font-light text-sm group-hover:text-white transition-colors">Hyderabad, Telangana,<br />India - 500001</p>
+                <p className="text-secondary font-light text-sm group-hover:text-accent transition-colors">Hyderabad, Telangana,<br />India - 500001</p>
               </div>
               <div className="flex gap-3 items-center group">
                 <Mail size={18} className="text-accent flex-shrink-0" />
-                <p className="text-slate-600 font-light text-sm group-hover:text-white transition-colors">excellence@smartliving.com</p>
+                <p className="text-secondary font-light text-sm group-hover:text-accent transition-colors">excellence@smartliving.com</p>
               </div>
               <div className="flex gap-3 items-center group">
                 <Phone size={18} className="text-accent flex-shrink-0" />
-                <p className="text-slate-600 font-light text-sm group-hover:text-white transition-colors">+91 91234 56789</p>
+                <p className="text-secondary font-light text-sm group-hover:text-accent transition-colors">+91 91234 56789</p>
               </div>
             </div>
           </div>
@@ -119,7 +125,7 @@ const Footer = () => {
           </p>
           <div className="flex gap-8">
             {["Privacy Policy", "Terms of Service"].map((item) => (
-              <a key={item} href="#" className="text-xs text-slate-500 hover:text-white transition-colors font-bold uppercase tracking-[0.2em]">
+              <a key={item} href="#" className="text-xs text-slate-500 hover:text-slate-950 transition-colors font-bold uppercase tracking-[0.2em]">
                 {item}
               </a>
             ))}

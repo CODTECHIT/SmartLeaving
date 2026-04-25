@@ -32,15 +32,15 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <section className="py-12 md:py-16 bg-background text-slate-900 relative overflow-hidden border-t border-slate-200">
+    <section className="py-12 md:py-16 bg-background text-foreground relative overflow-hidden border-t border-[rgba(var(--foreground-rgb),0.05)]">
       <div className="absolute top-0 left-0 w-full h-full mesh-bg opacity-10 pointer-events-none" />
       <div className="section-container relative z-10 text-center">
         <span className="subheading mb-8">Client Success</span>
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-16 tracking-tight text-slate-900">What Our Clients Say</h2>
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-16 tracking-tight text-foreground">What Our Clients Say</h2>
 
-        <div className="max-w-[1000px] mx-auto min-h-[250px] relative flex flex-col items-center">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 -mt-16 text-accent/10">
-            <Quote size={120} />
+        <div className="max-w-[1000px] mx-auto min-h-[300px] relative flex flex-col items-center">
+          <div className="mb-8 text-accent/20">
+            <Quote size={48} fill="currentColor" strokeWidth={0} />
           </div>
 
           <AnimatePresence mode="wait">
@@ -52,14 +52,14 @@ const Testimonials = () => {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="flex flex-col items-center"
             >
-              <p className="text-xl md:text-3xl font-light leading-relaxed text-slate-700 mb-10 italic">
+              <p className="text-xl md:text-3xl font-light leading-relaxed text-secondary mb-10 italic">
                 "{testimonials[index].quote}"
               </p>
               <div className="flex flex-col items-center">
-                <span className="text-xl font-bold text-slate-900 tracking-tight">
+                <span className="text-xl font-bold text-foreground tracking-tight">
                   {testimonials[index].author}
                 </span>
-                <span className="text-accent-light text-sm uppercase tracking-[0.2em] font-medium mt-2">
+                <span className="text-secondary text-sm uppercase tracking-[0.2em] font-black mt-2 text-center max-w-[250px]">
                   {testimonials[index].role}
                 </span>
               </div>
