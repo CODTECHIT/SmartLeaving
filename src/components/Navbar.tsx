@@ -88,33 +88,43 @@ const Navbar = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="absolute top-full left-0 w-full bg-white/95 backdrop-blur-3xl overflow-hidden md:hidden flex flex-col p-6 gap-4 border-b border-slate-200"
+              className="absolute top-full left-0 w-full bg-white overflow-hidden md:hidden flex flex-col p-8 gap-4 border-b border-slate-200 shadow-2xl z-50"
             >
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-lg font-bold text-slate-900 hover:text-accent-light transition-colors"
+                  className={`text-xl font-black uppercase tracking-widest transition-colors ${pathname === link.href ? "text-slate-900" : "text-slate-500"}`}
                   onClick={() => setIsOpen(false)}
                 >
                   {link.name}
                 </Link>
               ))}
-              <div className="border-t border-slate-100 pt-4 mt-2">
-                <span className="text-sm font-bold text-slate-400 uppercase tracking-wider">Services</span>
-                {serviceButtons.map((btn) => (
-                  <Link
-                    key={btn.name}
-                    href={btn.href}
-                    className="block py-3 text-slate-900 hover:text-accent-light font-medium"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {btn.name}
-                  </Link>
-                ))}
+              <div className="border-t border-slate-100 pt-6 mt-2">
+                <span className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em] mb-4 block">Our Services</span>
+                <div className="flex flex-col gap-2">
+                  {serviceButtons.map((btn) => (
+                    <Link
+                      key={btn.name}
+                      href={btn.href}
+                      className={`py-4 text-lg font-bold transition-all ${
+                        btn.href === "/industrial" ? "text-emerald-700" :
+                        btn.href === "/real-estate" ? "text-amber-700" :
+                        "text-blue-700"
+                      }`}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {btn.name}
+                    </Link>
+                  ))}
+                </div>
               </div>
-              <div className="mt-4 pt-4 border-t border-white/10">
-                <Link href="/contact" className="btn-premium w-full text-center py-3 text-sm">
+              <div className="mt-6 pt-6 border-t border-slate-100">
+                <Link 
+                  href="/contact" 
+                  className="w-full bg-slate-950 text-white text-center py-5 rounded-xl font-black uppercase tracking-widest text-sm shadow-xl block"
+                  onClick={() => setIsOpen(false)}
+                >
                   Work With Us
                 </Link>
               </div>

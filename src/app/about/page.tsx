@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import { Target, Lightbulb, Rocket, Award, Users, TrendingUp, Shield, Globe } from "lucide-react";
+import Link from "next/link";
 
 export default function AboutPage() {
   const values = [
@@ -148,11 +149,12 @@ export default function AboutPage() {
           <p className="text-slate-600 text-xl md:text-3xl mb-16 max-w-4xl mx-auto font-medium leading-relaxed">
             Let's discuss how we can help you achieve your business goals with strategic capital and advisory.
           </p>
-          <a href="/contact" className="btn-premium !bg-slate-950 py-8 px-16 text-2xl inline-block shadow-2xl hover:!bg-black transition-colors rounded-[2rem]">
+          <Link href="/contact" className="btn-premium !bg-slate-950 py-8 px-16 text-2xl inline-block shadow-2xl hover:!bg-black transition-colors rounded-[2rem]">
             Book Your Free Strategy Call
-          </a>
+          </Link>
         </div>
       </section>
     </main>
+
   );
 }
