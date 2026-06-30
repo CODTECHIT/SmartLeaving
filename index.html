@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smartliving | Premium Corporate Services</title>
+    <meta name="description" content="Strategic Solutions for Industrial Growth, Real Estate, and Financial Security. Built on Trust. Driven by Expertise.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="glass-nav">
+        <div class="container nav-container">
+            <a href="#" class="logo" onclick="showPage('home')">Smart<span>living</span></a>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="#home" class="nav-link active" onclick="showPage('home')">Home</a>
+                <a href="#industrial" class="nav-link" onclick="showPage('industrial')">Industrial Services</a>
+                <a href="#realestate" class="nav-link" onclick="showPage('realestate')">Real Estate</a>
+                <a href="#insurance" class="nav-link" onclick="showPage('insurance')">Insurance</a>
+                <a href="#contact" class="nav-link" onclick="showPage('contact')">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Home Page -->
+    <main id="home" class="page-view active">
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>Strategic Solutions for Industrial Growth, Real Estate, and Financial Security</h1>
+                <p>We deliver reliable, large-scale solutions across industries, real estate investments, and insurance services—built on trust, expertise, and long-term partnerships.</p>
+                <div style="display: flex; gap: 1rem; align-items: center;">
+                    <a href="#industrial" class="btn-primary" onclick="showPage('industrial')">Explore Our Services</a>
+                    <a href="#contact" style="color: white; font-weight: 600; text-decoration: underline;" onclick="showPage('contact')">Request a Consultation</a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px;">Scroll</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <section class="section container reveal">
+
+            <div class="section-header">
+                <h2>Our Core Expertise</h2>
+            </div>
+            <div class="grid grid-cols-3">
+                <div class="card">
+                    <div class="image-placeholder"></div>
+                    <i data-lucide="factory" class="card-icon"></i>
+                    <h3>Industrial Services</h3>
+                    <p>Delivering end-to-end industrial solutions, including project facilitation, property support, and structured funding for scalable growth.</p>
+                </div>
+                <div class="card">
+                    <div class="image-placeholder"></div>
+                    <i data-lucide="building-2" class="card-icon"></i>
+                    <h3>Real Estate Services</h3>
+                    <p>Offering curated real estate opportunities across farmlands, commercial properties, and residential developments tailored for investors and buyers.</p>
+                </div>
+                <div class="card">
+                    <div class="image-placeholder"></div>
+                    <i data-lucide="shield-check" class="card-icon"></i>
+                    <h3>Insurance</h3>
+                    <p>Providing comprehensive insurance solutions designed to protect individuals, assets, and organizations with reliability and transparency.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="section container reveal">
+            <div class="section-header">
+                <h2>Why Choose Smartliving</h2>
+                <p>We combine deep industry expertise with a commitment to long-term value.</p>
+            </div>
+            <div class="grid grid-cols-4">
+                <div class="pillar">
+                    <div class="pillar-icon"><i data-lucide="award"></i></div>
+                    <h4>Trusted Expertise</h4>
+                    <p style="font-size: 0.9rem; color: var(--color-text-light);">Years of experience in high-value industrial and real estate sectors.</p>
+                </div>
+                <div class="pillar">
+                    <div class="pillar-icon"><i data-lucide="bar-chart-4"></i></div>
+                    <h4>Strategic Funding</h4>
+                    <p style="font-size: 0.9rem; color: var(--color-text-light);">Access to non-collateral funding up to ₹500 Crores for scalable growth.</p>
+                </div>
+                <div class="pillar">
+                    <div class="pillar-icon"><i data-lucide="user-check"></i></div>
+                    <h4>Client Focused</h4>
+                    <p style="font-size: 0.9rem; color: var(--color-text-light);">Tailored solutions built on transparency and long-term partnerships.</p>
+                </div>
+                <div class="pillar">
+                    <div class="pillar-icon"><i data-lucide="trending-up"></i></div>
+                    <h4>Future-Ready</h4>
+                    <p style="font-size: 0.9rem; color: var(--color-text-light);">Investing in high-potential pharmaceutical and infrastructure projects.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Industrial Services Page -->
+    <main id="industrial" class="page-view">
+        <section class="section container reveal" style="padding-top: 120px;">
+            <div class="section-header">
+                <h2>Industrial Projects & Opportunities</h2>
+                <p>We connect investors and enterprises with high-value industrial projects, particularly in the pharmaceutical and manufacturing sectors.</p>
+            </div>
+            
+            <div class="grid grid-cols-1">
+                <div class="project-card reveal">
+                    <h3>Project 1 – Active Pharmaceutical Company</h3>
+                    <p>A fully operational pharmaceutical unit with established infrastructure and compliance standards. Ideal for strategic investors and expansion initiatives.</p>
+                    <a href="#" class="project-link" onclick="openModal('project1')"><i data-lucide="file-text"></i> View Detailed Project Report</a>
+                </div>
+                <div class="project-card reveal">
+                    <h3>Project 2 – Active Pharmaceutical Company</h3>
+                    <p>A high-potential pharmaceutical facility designed for scalable production with strong operational capabilities.</p>
+                    <a href="#" class="project-link" onclick="openModal('project2')"><i data-lucide="file-text"></i> View Detailed Project Report</a>
+                </div>
+                <div class="project-card reveal">
+                    <h3>Project 3 – Pharmaceutical Formulation Company</h3>
+                    <p>A formulation-based pharmaceutical company with advanced production setup and growth-ready business model.</p>
+                    <a href="#" class="project-link" onclick="openModal('project3')"><i data-lucide="file-text"></i> View Detailed Project Report</a>
+                </div>
+            </div>
+
+            <div class="section-header reveal" style="margin-top: 4rem;">
+                <h2>Funding Services</h2>
+            </div>
+            <div class="grid grid-cols-2">
+                <div class="card reveal">
+
+                    <i data-lucide="bar-chart-3" class="card-icon"></i>
+                    <h3>Private Funding to Industries</h3>
+                    <p>We provide structured financial support to industries with funding solutions up to ₹500 Crores, designed to accelerate business growth and expansion.</p>
+                    <ul style="margin-top: 1rem; list-style: none;">
+                        <li><i data-lucide="check" style="width: 16px; color: var(--color-accent);"></i> No collateral required*</li>
+                        <li><i data-lucide="check" style="width: 16px; color: var(--color-accent);"></i> Fast-track processing</li>
+                        <li><i data-lucide="check" style="width: 16px; color: var(--color-accent);"></i> Tailored financial structuring</li>
+                    </ul>
+                </div>
+                <div class="card reveal">
+                    <i data-lucide="trending-up" class="card-icon"></i>
+                    <h3>Equity Funding to Industries</h3>
+                    <p>We facilitate equity-based funding solutions by connecting businesses with strategic investors.</p>
+                    <ul style="margin-top: 1rem; list-style: none;">
+                        <li><i data-lucide="check" style="width: 16px; color: var(--color-accent);"></i> Growth capital support</li>
+                        <li><i data-lucide="check" style="width: 16px; color: var(--color-accent);"></i> Long-term partnership approach</li>
+                        <li><i data-lucide="check" style="width: 16px; color: var(--color-accent);"></i> Focus on scalable industries</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="section-header reveal" style="margin-top: 6rem;">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="accordion reveal" style="max-width: 800px; margin-left: auto; margin-right: auto;">
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        What kind of industrial projects do you facilitate?
+                        <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>We primarily focus on pharmaceutical manufacturing units, formulation companies, and active pharmaceutical ingredient (API) facilities. We also handle large-scale manufacturing infrastructure projects.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        How does the non-collateral funding work?
+                        <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Our funding solutions up to ₹500 Crores are based on project viability, company financials, and strategic growth potential. Terms and conditions apply based on the specific industry and scale of operation.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                        Can you help with international expansion?
+                        <i data-lucide="chevron-down"></i>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Yes, through our strategic partnerships and equity funding services, we assist companies in scaling their operations globally, especially within high-potential manufacturing sectors.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Real Estate Page -->
+    <main id="realestate" class="page-view">
+        <section class="section container" style="padding-top: 120px;">
+            <div class="section-header">
+                <h2>Real Estate Opportunities</h2>
+                <p>Diversified portfolio selected to meet investment goals and lifestyle needs.</p>
+            </div>
+            <div class="grid grid-cols-3">
+                <div class="card">
+                    <i data-lucide="trees" class="card-icon"></i>
+                    <h3>Farmlands</h3>
+                    <p>Premium agricultural lands suitable for long-term investment and sustainable returns.</p>
+                </div>
+                <div class="card">
+                    <i data-lucide="landmark" class="card-icon"></i>
+                    <h3>Commercial Lands</h3>
+                    <p>Strategically located commercial plots ideal for business development and high ROI.</p>
+                </div>
+                <div class="card">
+                    <i data-lucide="map" class="card-icon"></i>
+                    <h3>Open Plots</h3>
+                    <p>Clear-title open plots in developing regions with strong future appreciation potential.</p>
+                </div>
+                <div class="card">
+                    <i data-lucide="home" class="card-icon"></i>
+                    <h3>Villa Plots</h3>
+                    <p>Exclusive villa plots in gated layouts designed for premium residential living.</p>
+                </div>
+                <div class="card">
+                    <i data-lucide="building" class="card-icon"></i>
+                    <h3>Apartment Flats</h3>
+                    <p>Modern residential apartments with contemporary amenities and prime locations.</p>
+                </div>
+                <div class="card">
+                    <i data-lucide="refresh-cw" class="card-icon"></i>
+                    <h3>Resale Flats</h3>
+                    <p>Well-maintained resale properties offering value-driven investment opportunities.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Insurance Page -->
+    <main id="insurance" class="page-view">
+        <section class="section container" style="padding-top: 120px;">
+            <div class="section-header">
+                <h2>Insurance Solutions</h2>
+                <p>Protect what matters most with our reliable and comprehensive insurance offerings.</p>
+            </div>
+            <div class="grid grid-cols-2">
+                <div class="card">
+                    <i data-lucide="users" class="card-icon"></i>
+                    <h3>Group Health Insurance</h3>
+                    <p>Comprehensive health coverage solutions for organizations to safeguard employee well-being.</p>
+                </div>
+                <div class="card">
+                    <i data-lucide="shield" class="card-icon"></i>
+                    <h3>Property Insurance</h3>
+                    <p>Protection plans designed to secure residential and commercial properties against unforeseen risks.</p>
+                </div>
+                <div class="card">
+                    <i data-lucide="heart" class="card-icon"></i>
+                    <h3>Personal Health Insurance</h3>
+                    <p>Flexible health insurance policies ensuring financial security during medical emergencies.</p>
+                </div>
+                <div class="card">
+                    <i data-lucide="user-check" class="card-icon"></i>
+                    <h3>Life Insurance</h3>
+                    <p>Long-term financial protection plans that secure the future of your loved ones.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Contact Page -->
+    <main id="contact" class="page-view">
+        <section class="section container" style="padding-top: 120px;">
+            <div class="section-header">
+                <h2>Get in Touch</h2>
+                <p>Connect with us to explore opportunities, discuss investments, or learn more about our services.</p>
+            </div>
+            <div class="grid grid-cols-1" style="max-width: 600px; margin: 0 auto;">
+                <form id="contactForm" class="card" onsubmit="event.preventDefault(); alert('Message sent! Our team will contact you soon.');">
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Full Name</label>
+                        <input type="text" required style="width: 100%; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 4px;">
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Email Address</label>
+                        <input type="email" required style="width: 100%; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 4px;">
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Service of Interest</label>
+                        <select required style="width: 100%; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 4px; background: white;">
+                            <option value="">Select a service</option>
+                            <option value="industrial">Industrial Projects</option>
+                            <option value="funding">Industrial Funding</option>
+                            <option value="realestate">Real Estate Investment</option>
+                            <option value="insurance">Insurance Solutions</option>
+                        </select>
+                    </div>
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Message</label>
+                        <textarea rows="4" required style="width: 100%; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 4px;"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="color: white;">Trusted by Industry Leaders</h2>
+            </div>
+            <div class="testimonial-container" id="testimonialSlider">
+                <div class="testimonial-slide active">
+                    <p class="testimonial-quote">"Smartliving's strategic approach to industrial funding helped us scale our pharmaceutical production by 200% within a year. Their expertise is unmatched."</p>
+                    <p class="testimonial-author">Dr. Rajesh Kumar – CEO, PharmaCore Industries</p>
+                </div>
+                <div class="testimonial-slide">
+                    <p class="testimonial-quote">"The real estate opportunities provided were exactly what we needed for our portfolio. Clear titles and high ROI locations made the decision easy."</p>
+                    <p class="testimonial-author">Anita Sharma – Investment Lead, Global Realty Partners</p>
+                </div>
+                <div class="testimonial-slide">
+                    <p class="testimonial-quote">"Reliability and transparency are the hallmarks of Smartliving. Their insurance solutions gave our organization the security we were looking for."</p>
+                    <p class="testimonial-author">Sameer Varma – HR Director, TechFlow Systems</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="#" class="logo" style="color: white; margin-bottom: 1.5rem; display: block;">Smart<span>living</span></a>
+                <p style="color: var(--color-text-light);">We are committed to delivering trusted solutions across industrial services, real estate, and insurance—focused on growth, security, and long-term value.</p>
+                <div style="margin-top: 2rem; display: flex; gap: 1rem;">
+                    <a href="#" style="color: white; font-size: 1.2rem;"><i data-lucide="linkedin"></i></a>
+                    <a href="#" style="color: white; font-size: 1.2rem;"><i data-lucide="twitter"></i></a>
+                    <a href="#" style="color: white; font-size: 1.2rem;"><i data-lucide="facebook"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#home" onclick="showPage('home')">Home</a></li>
+                    <li><a href="#industrial" onclick="showPage('industrial')">Industrial Services</a></li>
+                    <li><a href="#realestate" onclick="showPage('realestate')">Real Estate</a></li>
+                    <li><a href="#insurance" onclick="showPage('insurance')">Insurance</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Newsletter</h4>
+                <p style="color: var(--color-text-light); font-size: 0.9rem; margin-bottom: 1rem;">Stay updated with our latest industrial projects and real estate opportunities.</p>
+                <form onsubmit="event.preventDefault(); alert('Subscribed!');" style="display: flex; gap: 0.5rem;">
+                    <input type="email" placeholder="Email" style="padding: 0.5rem; border-radius: 4px; border: none; flex: 1;">
+                    <button type="submit" class="btn-primary" style="padding: 0.5rem 1rem; text-transform: none; font-size: 0.75rem;">Join</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom container">
+            <p>&copy; 2026 Smartliving. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#home" id="backToTop" class="visible">
+        <i data-lucide="arrow-up"></i>
+    </a>
+
+
+    <!-- Modal Overlay -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <div id="modalBody">
+                <!-- Content injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Project Content Data
+        const projectData = {
+            project1: {
+                title: "Project 1 – Active Pharmaceutical Company",
+                content: "<h3>Executive Summary</h3><p>Operational pharmaceutical unit with 15+ years of market presence. Specializes in API manufacturing with WHO-GMP certification. Facility includes advanced R&D labs and high-capacity production lines.</p><h3>Key Highlights</h3><ul><li>Prime Location in Industrial Hub</li><li>Total Land Area: 5 Acres</li><li>Ready-to-use Infrastructure</li><li>Ongoing supply contracts with global leaders</li></ul>"
+            },
+            project2: {
+                title: "Project 2 – Active Pharmaceutical Company",
+                content: "<h3>Operational Overview</h3><p>This facility is designed for large-scale liquid injection and tablet production. Features state-of-the-art HVAC systems and automated packaging units.</p><h3>Technical Specifications</h3><ul><li>Modular clean rooms</li><li>Integrated waste management</li><li>Expandable production capacity by 40%</li></ul>"
+            },
+            project3: {
+                title: "Project 3 – Pharmaceutical Formulation Company",
+                content: "<h3>Business Case</h3><p>Focused on generic drug formulations. Strong portfolio of patented delivery mechanisms. High scalability potential in emerging markets.</p><h3>Infrastructure</h3><ul><li>Advanced stability testing units</li><li>Sophisticated warehousing with cold storage</li><li>Regulatory compliance for EU and US markets in progress</li></ul>"
+            }
+        };
+
+        // Modal Functions
+        function openModal(projectId) {
+            const data = projectData[projectId];
+            if (data) {
+                document.getElementById('modalBody').innerHTML = `
+                    <h2 style="margin-bottom: 1.5rem;">${data.title}</h2>
+                    <div class="premium-report-content">${data.content}</div>
+                    <a href="#" class="btn-primary" style="margin-top: 2rem; display: inline-block;" onclick="alert('Downloading PDF...')">Download PDF Report</a>
+                `;
+                document.getElementById('modalOverlay').style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeModal(event) {
+            document.getElementById('modalOverlay').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Hamburger Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('mobile-active');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('mobile-active');
+            });
+        });
+
+        // Page Routing Logic
+        function showPage(pageId) {
+            document.querySelectorAll('.page-view').forEach(view => {
+                view.classList.remove('active');
+            });
+            
+            const selectedPage = document.getElementById(pageId);
+            if (selectedPage) {
+                selectedPage.classList.add('active');
+                window.scrollTo(0, 0);
+                setTimeout(reveal, 100); // Trigger reveal check
+            }
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + pageId || (pageId === 'home' && link.getAttribute('href') === '#home')) {
+                    link.classList.add('active');
+                }
+            });
+
+            lucide.createIcons();
+        }
+
+        // Reveal on Scroll Logic
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+
+        // Handle direct links
+        window.addEventListener('hashchange', () => {
+            const page = window.location.hash.substring(1) || 'home';
+            showPage(page);
+        });
+
+        // Sticky Navbar Effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.glass-nav');
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = 'var(--shadow-md)';
+                nav.style.background = 'rgba(255, 255, 255, 1)';
+            } else {
+                nav.style.boxShadow = 'none';
+                nav.style.background = 'var(--color-glass)';
+            }
+        });
+
+        // Initial check
+        reveal();
+
+        // FAQ Toggle
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling;
+            header.classList.toggle('active');
+            content.classList.toggle('active');
+        }
+
+        // Testimonial Slider
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.testimonial-slide');
+        
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+        
+        setInterval(nextSlide, 5000);
+
+        // Back to Top Scroll Logic
+        window.addEventListener('scroll', () => {
+            const btt = document.getElementById('backToTop');
+            if (window.scrollY > 500) {
+                btt.classList.add('visible');
+            } else {
+                btt.classList.remove('visible');
+            }
+        });
+    </script>
+
+
+</body>
+</html>
