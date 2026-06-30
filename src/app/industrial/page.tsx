@@ -13,19 +13,19 @@ const projectData = [
     id: "project1",
     title: "Project 1 – Active Pharmaceutical Company",
     description: "Operational pharmaceutical unit with 15+ years of market presence. Specializes in API manufacturing with WHO-GMP certification.",
-    pdfUrl: "/projects/project1.pdf",
+    pdfUrl: "/industrial land/1.pptx",
   },
   {
     id: "project2",
     title: "Project 2 – Active Pharmaceutical Company",
     description: "Large-scale liquid injection and tablet production facility. Features state-of-the-art HVAC systems and automated packaging units.",
-    pdfUrl: "/projects/project2.pdf",
+    pdfUrl: "/industrial land/2.pptx",
   },
   {
     id: "project3",
     title: "Project 3 – Pharmaceutical Formulation Company",
     description: "Focused on generic drug formulations with strong portfolio of patented delivery mechanisms and high scalability potential.",
-    pdfUrl: "/projects/project3.pdf",
+    pdfUrl: "/industrial land/3.pptx",
   },
 ];
 

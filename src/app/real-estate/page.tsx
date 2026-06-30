@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Trees, Landmark, Map, Home, Building, RefreshCw, Send, Phone as PhoneIcon, User, Layers, IndianRupee, MapPin as MapPinIcon, MessageSquare } from "lucide-react";
+import { Trees, Landmark, Map, Home, Building, RefreshCw, Send, Phone as PhoneIcon, User, Layers, IndianRupee, MapPin as MapPinIcon, MessageSquare, Download } from "lucide-react";
 import Image from "next/image";
 
 export default function RealEstatePage() {
@@ -37,12 +37,55 @@ export default function RealEstatePage() {
   };
 
   const categories = [
-    { title: "Farmlands", description: "Premium agricultural lands suitable for long-term investment and sustainable returns.", Icon: Trees },
-    { title: "Commercial Lands", description: "Strategically located commercial plots ideal for business development and high ROI.", Icon: Landmark },
-    { title: "Open Plots", description: "Clear-title open plots in developing regions with strong future appreciation potential.", Icon: Map },
-    { title: "Villa Plots", description: "Exclusive villa plots in gated layouts designed for premium residential living.", Icon: Home },
-    { title: "New Apartment Flats", description: "Modern residential apartments with contemporary amenities and prime locations.", Icon: Building },
-    { title: "Resale Flats", description: "Well-maintained resale properties offering value-driven investment opportunities.", Icon: RefreshCw },
+    { 
+      title: "Farmlands", 
+      description: "Premium agricultural lands suitable for long-term investment and sustainable returns.", 
+      Icon: Trees,
+      downloads: [
+        { label: "Brochure 1", url: "/farm land/1.pptx" },
+        { label: "Brochure 2", url: "/farm land/2.pptx" },
+        { label: "Brochure 3", url: "/farm land/3.pptx" }
+      ]
+    },
+    { 
+      title: "Commercial Lands", 
+      description: "Strategically located commercial plots ideal for business development and high ROI.", 
+      Icon: Landmark,
+      downloads: [
+        { label: "Brochure 1", url: "/commercial land/1.pptx" },
+        { label: "Brochure 2", url: "/commercial land/2.pptx" },
+        { label: "Brochure 3", url: "/commercial land/3.pptx" },
+        { label: "Brochure 4", url: "/commercial land/4.pptx" }
+      ]
+    },
+    { 
+      title: "Open Plots", 
+      description: "Clear-title open plots in developing regions with strong future appreciation potential.", 
+      Icon: Map 
+    },
+    { 
+      title: "Villa Plots", 
+      description: "Exclusive villa plots in gated layouts designed for premium residential living.", 
+      Icon: Home,
+      downloads: [
+        { label: "Brochure 1", url: "/villa development/1.pptx" },
+        { label: "Brochure 2", url: "/villa development/2.pptx" }
+      ]
+    },
+    { 
+      title: "New Apartment Flats", 
+      description: "Modern residential apartments with contemporary amenities and prime locations.", 
+      Icon: Building,
+      downloads: [
+        { label: "Brochure 1", url: "/apartment development/1.pptx" },
+        { label: "Brochure 2", url: "/apartment development/2.pptx" }
+      ]
+    },
+    { 
+      title: "Resale Flats", 
+      description: "Well-maintained resale properties offering value-driven investment opportunities.", 
+      Icon: RefreshCw 
+    },
   ];
 
   return (
@@ -88,7 +131,24 @@ export default function RealEstatePage() {
                 <cat.Icon size={36} strokeWidth={2} />
               </div>
               <h3 className="text-2xl md:text-3xl font-black mb-6 text-stone-900 tracking-tight group-hover:text-amber-700 transition-colors leading-tight">{cat.title}</h3>
-              <p className="text-stone-500 leading-relaxed font-medium text-lg md:text-xl">{cat.description}</p>
+              <p className="text-stone-500 leading-relaxed font-medium text-lg md:text-xl mb-6">{cat.description}</p>
+              
+              {cat.downloads && (
+                <div className="flex flex-col gap-3">
+                  {cat.downloads.map((download, i) => (
+                    <a
+                      key={i}
+                      href={download.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-stone-600 hover:text-amber-700 font-bold text-sm bg-stone-50 hover:bg-amber-50 px-4 py-3 rounded-xl transition-colors border border-stone-100 group/link"
+                    >
+                      <Download size={16} className="text-amber-600 group-hover/link:-translate-y-1 transition-transform" />
+                      {download.label}
+                    </a>
+                  ))}
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
