@@ -81,7 +81,7 @@ export default function ContactPage() {
             </div>
             <div>
               <h3 className="subheading !text-slate-400 mb-8">Strategic Support</h3>
-              <p className="text-4xl md:text-6xl font-black text-slate-950 tracking-tighter hover:text-slate-600 transition-colors cursor-pointer">+91 91234 56789</p>
+              <p className="text-4xl md:text-6xl font-black text-slate-950 tracking-tighter hover:text-slate-600 transition-colors cursor-pointer"> 9390652846, 9866986545</p>
             </div>
 
             <div className="pt-20 border-t border-slate-200">

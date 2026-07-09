@@ -113,7 +113,7 @@ const Footer = () => {
               </div>
               <div className="flex gap-3 items-center group">
                 <Phone size={18} className="text-accent flex-shrink-0" />
-                <p className="text-secondary font-light text-sm group-hover:text-accent transition-colors">+91 91234 56789</p>
+                <p className="text-secondary font-light text-sm group-hover:text-accent transition-colors"> 9390652846, 9866986545</p>
               </div>
             </div>
           </div>
