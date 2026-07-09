@@ -77,7 +77,7 @@ export default function ContactPage() {
             </div>
             <div>
               <h3 className="subheading !text-slate-400 mb-8">Direct Email</h3>
-              <p className="text-3xl md:text-5xl font-black text-slate-950 tracking-tighter hover:text-slate-600 transition-colors cursor-pointer underline decoration-slate-200 underline-offset-12">excellence@smartliving.com</p>
+              <p className="text-3xl md:text-5xl font-black text-slate-950 tracking-tighter hover:text-slate-600 transition-colors cursor-pointer underline decoration-slate-200 underline-offset-12">excellence@investindiasmart.com</p>
             </div>
             <div>
               <h3 className="subheading !text-slate-400 mb-8">Strategic Support</h3>

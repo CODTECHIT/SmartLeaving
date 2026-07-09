@@ -5,7 +5,7 @@ import { Quote } from "lucide-react";
 
 const testimonials = [
   {
-    quote: "Smartliving's strategic approach to industrial funding helped us scale our pharmaceutical production by 200% within a year. Their expertise is unmatched.",
+    quote: "investindiasmart's strategic approach to industrial funding helped us scale our pharmaceutical production by 200% within a year. Their expertise is unmatched.",
     author: "Dr. Rajesh Kumar",
     role: "CEO, PharmaCore Industries"
   },
@@ -15,7 +15,7 @@ const testimonials = [
     role: "Investment Lead, Global Realty Partners"
   },
   {
-    quote: "Reliability and transparency are the hallmarks of Smartliving. Their insurance solutions gave our organization the security we were looking for.",
+    quote: "Reliability and transparency are the hallmarks of investindiasmart. Their insurance solutions gave our organization the security we were looking for.",
     author: "Sameer Varma",
     role: "HR Director, TechFlow Systems"
   }

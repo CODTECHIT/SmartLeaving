@@ -38,7 +38,7 @@ const Navbar = () => {
         <Link href="/" className="relative h-12 md:h-16 w-48 md:w-64 group">
           <Image
             src="/logo.jpeg"
-            alt="Smartliving Logo"
+            alt="investindiasmart Logo"
             fill
             className="object-contain"
             priority
@@ -65,11 +65,10 @@ const Navbar = () => {
             <Link
               key={btn.name}
               href={btn.href}
-              className={`text-[11px] font-black uppercase tracking-wider px-6 py-3.5 rounded-xl transition-all duration-500 whitespace-nowrap shadow-sm border-2 ${
-                btn.href === "/industrial" ? "bg-emerald-50 border-emerald-100 text-emerald-900 hover:bg-emerald-600 hover:text-white hover:border-emerald-600" :
-                btn.href === "/real-estate" ? "bg-amber-50 border-amber-100 text-amber-900 hover:bg-amber-600 hover:text-white hover:border-amber-600" :
-                "bg-blue-50 border-blue-100 text-blue-900 hover:bg-blue-600 hover:text-white hover:border-blue-600"
-              }`}
+              className={`text-[11px] font-black uppercase tracking-wider px-6 py-3.5 rounded-xl transition-all duration-500 whitespace-nowrap shadow-sm border-2 ${btn.href === "/industrial" ? "bg-emerald-50 border-emerald-100 text-emerald-900 hover:bg-emerald-600 hover:text-white hover:border-emerald-600" :
+                  btn.href === "/real-estate" ? "bg-amber-50 border-amber-100 text-amber-900 hover:bg-amber-600 hover:text-white hover:border-amber-600" :
+                    "bg-blue-50 border-blue-100 text-blue-900 hover:bg-blue-600 hover:text-white hover:border-blue-600"
+                }`}
             >
               {btn.name}
             </Link>
@@ -107,11 +106,10 @@ const Navbar = () => {
                     <Link
                       key={btn.name}
                       href={btn.href}
-                      className={`py-4 text-lg font-bold transition-all ${
-                        btn.href === "/industrial" ? "text-emerald-700" :
-                        btn.href === "/real-estate" ? "text-amber-700" :
-                        "text-blue-700"
-                      }`}
+                      className={`py-4 text-lg font-bold transition-all ${btn.href === "/industrial" ? "text-emerald-700" :
+                          btn.href === "/real-estate" ? "text-amber-700" :
+                            "text-blue-700"
+                        }`}
                       onClick={() => setIsOpen(false)}
                     >
                       {btn.name}
@@ -120,8 +118,8 @@ const Navbar = () => {
                 </div>
               </div>
               <div className="mt-6 pt-6 border-t border-slate-100">
-                <Link 
-                  href="/contact" 
+                <Link
+                  href="/contact"
                   className="w-full bg-slate-950 text-white text-center py-5 rounded-xl font-black uppercase tracking-widest text-sm shadow-xl block"
                   onClick={() => setIsOpen(false)}
                 >

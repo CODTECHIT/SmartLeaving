@@ -38,7 +38,7 @@ export default function AboutPage() {
               Building Futures Through <br /><span className="font-serif italic capitalize font-light text-slate-300 tracking-normal">Strategic Partnership</span>
             </h1>
             <p className="text-xl md:text-2xl text-slate-400 max-w-[800px] font-medium leading-relaxed tracking-tight border-l border-white/10 pl-8">
-              Smartliving is a premier strategic capital and advisory firm specializing in industrial growth, real estate opportunities, and financial structuring.
+              investindiasmart is a premier strategic capital and advisory firm specializing in industrial growth, real estate opportunities, and financial structuring.
             </p>
           </motion.div>
         </div>

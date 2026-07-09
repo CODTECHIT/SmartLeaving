@@ -43,9 +43,9 @@ export const ServiceCard = ({ title, description, Icon, href }: ServiceCardProps
           </div>
         </div>
         
-        <div className="p-10 flex flex-col flex-grow">
-          <h3 className="text-3xl font-black mb-6 text-premium-900 tracking-tight group-hover:text-black transition-colors">{title}</h3>
-          <p className="text-slate-600 leading-relaxed mb-10 flex-grow font-medium text-lg">{description}</p>
+        <div className="p-6 md:p-10 flex flex-col flex-grow">
+          <h3 className="text-2xl md:text-3xl font-black mb-4 md:mb-6 text-premium-900 tracking-tight group-hover:text-black transition-colors">{title}</h3>
+          <p className="text-slate-600 leading-relaxed mb-6 md:mb-10 flex-grow font-medium text-base md:text-lg">{description}</p>
           
           <div className="inline-flex items-center gap-4 text-[11px] font-black text-slate-400 group-hover:text-black group-hover:gap-6 transition-all uppercase tracking-[0.5em] group/link">
             Explore Strategy 
@@ -69,12 +69,12 @@ export const Pillar = ({ title, description, Icon }: PillarProps) => {
       initial={{ opacity: 0, scale: 0.95 }}
       whileInView={{ opacity: 1, scale: 1 }}
       viewport={{ once: true }}
-      className="p-12 rounded-[3rem] bg-white border border-slate-50 shadow-[0_20px_60px_rgba(0,0,0,0.01)] transition-all duration-700 text-left flex flex-col items-start group hover:-translate-y-4 hover:shadow-[0_40px_80px_rgba(0,0,0,0.06)] hover:border-slate-200"
+      className="p-8 md:p-12 rounded-[3rem] bg-white border border-slate-50 shadow-[0_20px_60px_rgba(0,0,0,0.01)] transition-all duration-700 text-left flex flex-col items-start group hover:-translate-y-4 hover:shadow-[0_40px_80px_rgba(0,0,0,0.06)] hover:border-slate-200"
     >
       <div className="w-20 h-20 rounded-[2rem] bg-slate-50 text-slate-900 flex items-center justify-center mb-10 group-hover:bg-slate-900 group-hover:text-white transition-all duration-700 shadow-sm group-hover:shadow-2xl group-hover:-translate-y-2">
         <Icon size={36} strokeWidth={2.2} />
       </div>
-      <h4 className="text-2xl font-black mb-6 text-premium-900 tracking-tight group-hover:text-black transition-colors">{title}</h4>
+      <h4 className="text-xl md:text-2xl font-black mb-4 md:mb-6 text-premium-900 tracking-tight group-hover:text-black transition-colors">{title}</h4>
       <p className="text-slate-500 text-lg leading-relaxed font-medium">{description}</p>
     </motion.div>
   );

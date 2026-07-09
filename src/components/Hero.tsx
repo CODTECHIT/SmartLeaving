@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[100svh] flex items-center overflow-hidden bg-background pt-32 pb-20">
+    <section className="relative min-h-[100svh] flex items-center overflow-hidden bg-background pt-28 md:pt-32 pb-12 md:pb-20">
       {/* Cinematic Background Image with Dark Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -101,7 +101,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 1.4, ease: [0.16, 1, 0.3, 1] }}
-            className="text-lg md:text-xl text-slate-300 mb-14 max-w-[800px] font-medium leading-relaxed tracking-tight border-l border-white/10 pl-8"
+            className="text-lg md:text-xl text-slate-300 mb-8 md:mb-14 max-w-[800px] font-medium leading-relaxed tracking-tight border-l border-white/10 pl-6 md:pl-8"
           >
             We specialize in facilitating high-value industrial properties, real
             estate transactions, and financial solutions between buyers and
@@ -129,7 +129,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-wrap gap-8 md:gap-16 mt-12 md:mt-20 pt-10 border-t border-white/5"
+            className="flex flex-wrap gap-6 md:gap-16 mt-10 md:mt-20 pt-8 md:pt-10 border-t border-white/5"
           >
             <div className="group cursor-default">
               <div className="text-3xl font-black text-white mb-1">100+</div>

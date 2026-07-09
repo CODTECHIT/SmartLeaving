@@ -36,7 +36,7 @@ const Footer = () => {
             <Link href="/" className="relative h-16 w-60 mb-8 block group">
               <Image
                 src="/logo.jpeg"
-                alt="Smartliving Logo"
+                alt="investindiasmart Logo"
                 fill
                 className="object-contain"
               />
@@ -109,7 +109,7 @@ const Footer = () => {
               </div>
               <div className="flex gap-3 items-center group">
                 <Mail size={18} className="text-accent flex-shrink-0" />
-                <p className="text-secondary font-light text-sm group-hover:text-accent transition-colors">excellence@smartliving.com</p>
+                <p className="text-secondary font-light text-sm group-hover:text-accent transition-colors">excellence@investindiasmart.com</p>
               </div>
               <div className="flex gap-3 items-center group">
                 <Phone size={18} className="text-accent flex-shrink-0" />
@@ -121,7 +121,7 @@ const Footer = () => {
 
         <div className="border-t border-slate-200 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-slate-500 text-xs font-bold uppercase tracking-[0.3em]">
-            &copy; 2026 Smartliving. All Rights Reserved.
+            &copy; 2026 investindiasmart. All Rights Reserved.
           </p>
           <div className="flex gap-8">
             {["Privacy Policy", "Terms of Service"].map((item) => (
