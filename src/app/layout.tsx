@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   keywords: ["Industrial Services", "Real Estate Investment", "Industrial Funding", "Pharma Projects", "Insurance Solutions"],
   authors: [{ name: "investindiasmart Team" }],
   verification: {
-    google: "gVugs9gH-unEiP9hBGuku5kSNKVqEAqiWCQrGWP5vSI",
+    google: "6Io3DtPStMLyQHRFT7wiAKwI55ZHG164_Nh5rM9onrc",
   },
 };
 
@@ -50,7 +50,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${outfit.variable} ${playfair.variable} scroll-smooth`}>
       <body className={`${inter.className} bg-background text-foreground transition-colors duration-500 antialiased`}>
         <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=G-GLGS0CD1FF`}
+          src={`https://www.googletagmanager.com/gtag/js?id=G-CYHMBDWB3Z`}
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
@@ -58,7 +58,7 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-GLGS0CD1FF');
+            gtag('config', 'G-CYHMBDWB3Z');
           `}
         </Script>
         <Navbar />

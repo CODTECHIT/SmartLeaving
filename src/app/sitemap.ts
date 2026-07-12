@@ -1,44 +1,32 @@
-import { MetadataRoute } from 'next';
+import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://investindiasmarat.com';
+  const baseUrl = 'https://www.investindiasmart.com'
 
-  return [
-    {
-      url: `${baseUrl}`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/industrial`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/real-estate`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/insurance`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.5,
-    },
-  ];
+  const staticRoutes = [
+    '',
+    '/about',
+    '/contact',
+    '/industrial',
+    '/industrial/foreign-direct-investment',
+    '/industrial/telangana',
+    '/industrial/andhra-pradesh',
+    '/industrial/karnataka',
+    '/real-estate',
+    '/real-estate/telangana',
+    '/real-estate/andhra-pradesh',
+    '/real-estate/karnataka',
+    '/insurance',
+    '/nri-investment',
+    '/blog/nri-guide-buying-property-india',
+    '/blog/fema-rules-foreign-nationals-property',
+    '/blog/fdi-industrial-land-india-guide'
+  ]
+
+  return staticRoutes.map((route) => ({
+    url: `${baseUrl}${route}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: route === '' ? 1 : route.split('/').length > 2 ? 0.7 : 0.9,
+  }))
 }

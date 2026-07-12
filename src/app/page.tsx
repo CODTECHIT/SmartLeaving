@@ -184,7 +184,7 @@ export default function Home() {
               className="group cursor-pointer"
             >
               <div className="relative aspect-[4/5] overflow-hidden rounded-[3.5rem] mb-10 bg-slate-50 shadow-[0_30px_80px_rgba(0,0,0,0.08)] group-hover:shadow-[0_50px_100px_rgba(0,0,0,0.15)] transition-all duration-1000">
-                <Image src={study.image} alt={study.title} fill className="object-cover group-hover:scale-110 transition-transform duration-1000 opacity-90 group-hover:opacity-100" />
+                <Image src={study.image} alt={`${study.title} - ${study.category} for industrial and real estate investment`} fill className="object-cover group-hover:scale-110 transition-transform duration-1000 opacity-90 group-hover:opacity-100" />
                 <div className="absolute inset-0 bg-premium-900/20 group-hover:bg-transparent transition-colors duration-700" />
                 <div className="absolute top-10 left-10 py-3 px-7 rounded-2xl bg-white/95 backdrop-blur-2xl text-[11px] font-black uppercase tracking-[0.3em] text-slate-900 shadow-2xl border border-white/50">
                   {study.category}
@@ -299,6 +299,29 @@ export default function Home() {
           </div>
         </motion.div>
       </section>
+
+      {/* LocalBusiness Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'RealEstateAgent',
+            name: 'investindiasmart',
+            image: 'https://www.investindiasmart.com/logo.jpeg',
+            url: 'https://www.investindiasmart.com',
+            telephone: '+91-9390652846',
+            address: {
+              '@type': 'PostalAddress',
+              addressLocality: 'Hyderabad',
+              addressRegion: 'Telangana',
+              postalCode: '500001',
+              addressCountry: 'IN',
+            },
+            areaServed: ['Telangana', 'Andhra Pradesh', 'Karnataka'],
+          })
+        }}
+      />
     </main>
   );
 }

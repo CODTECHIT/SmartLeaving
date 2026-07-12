@@ -32,18 +32,18 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="flex items-center gap-4 mb-8">
+            <div className="flex items-center gap-4 mb-6 md:mb-8">
               <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: 48 }}
                 transition={{ duration: 1, delay: 0.5 }}
                 className="h-[1px] bg-slate-500"
               />
-              <span className="text-[10px] uppercase tracking-[0.5em] font-black text-slate-500">
+              <span className="text-[9px] md:text-[10px] uppercase tracking-[0.4em] md:tracking-[0.5em] font-black text-slate-500">
                 Strategic Capital & Advisory
               </span>
             </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-10 leading-[1.05] tracking-[-0.03em] text-white uppercase drop-shadow-2xl">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black mb-6 md:mb-10 leading-[1.1] md:leading-[1.05] tracking-[-0.02em] md:tracking-[-0.03em] text-white uppercase drop-shadow-2xl">
               <motion.span
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -101,7 +101,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 1.4, ease: [0.16, 1, 0.3, 1] }}
-            className="text-lg md:text-xl text-slate-300 mb-8 md:mb-14 max-w-[800px] font-medium leading-relaxed tracking-tight border-l border-white/10 pl-6 md:pl-8"
+            className="text-base sm:text-lg md:text-xl text-slate-300 mb-8 md:mb-14 max-w-[800px] font-medium leading-relaxed tracking-tight border-l-2 md:border-l border-white/20 md:border-white/10 pl-4 sm:pl-6 md:pl-8"
           >
             We specialize in facilitating high-value industrial properties, real
             estate transactions, and financial solutions between buyers and
@@ -114,11 +114,11 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 1.6, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col sm:flex-row gap-8 items-center"
+            className="flex flex-col sm:flex-row gap-8 items-start sm:items-center"
           >
             <Link
               href="/contact"
-              className="btn-premium w-full sm:w-auto shadow-2xl hover:scale-105 transition-transform"
+              className="btn-premium w-full sm:w-auto text-center shadow-2xl hover:scale-105 transition-transform"
             >
               Get Started Now
             </Link>
@@ -129,17 +129,17 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-wrap gap-6 md:gap-16 mt-10 md:mt-20 pt-8 md:pt-10 border-t border-white/5"
+            className="flex flex-wrap gap-4 sm:gap-6 md:gap-16 mt-8 md:mt-20 pt-6 md:pt-10 border-t border-white/10 md:border-white/5"
           >
             <div className="group cursor-default">
-              <div className="text-3xl font-black text-white mb-1">100+</div>
-              <div className="text-[10px] uppercase tracking-[0.2em] font-black text-slate-500">
+              <div className="text-2xl md:text-3xl font-black text-white mb-1">100+</div>
+              <div className="text-[9px] md:text-[10px] uppercase tracking-[0.1em] md:tracking-[0.2em] font-black text-slate-500">
                 Global Leaders Trusted
               </div>
             </div>
             <div className="group cursor-default">
-              <div className="text-3xl font-black text-white mb-1">$500M+</div>
-              <div className="text-[10px] uppercase tracking-[0.2em] font-black text-slate-500">
+              <div className="text-2xl md:text-3xl font-black text-white mb-1">$500M+</div>
+              <div className="text-[9px] md:text-[10px] uppercase tracking-[0.1em] md:tracking-[0.2em] font-black text-slate-500">
                 Capital Facilitated
               </div>
             </div>
