@@ -23,6 +23,7 @@ const Navbar = () => {
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
+    { name: "NRI Investment", href: "/nri-investment" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -46,12 +47,12 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Menu - Navigation Links */}
-        <div className="hidden md:flex gap-12 items-center">
+        <div className="hidden lg:flex gap-6 xl:gap-8 items-center">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className={`text-[12px] font-black uppercase tracking-[0.3em] transition-all relative after:absolute after:bottom-[-6px] after:left-0 after:h-[1px] after:bg-slate-900 after:transition-all ${pathname === link.href ? "text-slate-900 after:w-full" : "text-slate-600 hover:text-slate-900 after:w-0 hover:after:w-full"
+              className={`text-[11px] md:text-[12px] font-black uppercase tracking-[0.2em] xl:tracking-[0.3em] transition-all relative after:absolute after:bottom-[-6px] after:left-0 after:h-[1px] after:bg-slate-900 after:transition-all ${pathname === link.href ? "text-slate-900 after:w-full" : "text-slate-600 hover:text-slate-900 after:w-0 hover:after:w-full"
                 }`}
             >
               {link.name}
@@ -60,12 +61,12 @@ const Navbar = () => {
         </div>
 
         {/* Service Buttons - Visible on Desktop (Wide) */}
-        <div className="hidden lg:flex gap-4 items-center">
+        <div className="hidden xl:flex gap-3 items-center">
           {serviceButtons.map((btn) => (
             <Link
               key={btn.name}
               href={btn.href}
-              className={`text-[11px] font-black uppercase tracking-wider px-6 py-3.5 rounded-xl transition-all duration-500 whitespace-nowrap shadow-sm border-2 ${btn.href === "/industrial" ? "bg-emerald-50 border-emerald-100 text-emerald-900 hover:bg-emerald-600 hover:text-white hover:border-emerald-600" :
+              className={`text-[10px] font-black uppercase tracking-wider px-4 py-2.5 rounded-xl transition-all duration-500 whitespace-nowrap shadow-sm border-2 ${btn.href === "/industrial" ? "bg-emerald-50 border-emerald-100 text-emerald-900 hover:bg-emerald-600 hover:text-white hover:border-emerald-600" :
                   btn.href === "/real-estate" ? "bg-amber-50 border-amber-100 text-amber-900 hover:bg-amber-600 hover:text-white hover:border-amber-600" :
                     "bg-blue-50 border-blue-100 text-blue-900 hover:bg-blue-600 hover:text-white hover:border-blue-600"
                 }`}

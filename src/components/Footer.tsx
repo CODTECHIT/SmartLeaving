@@ -4,20 +4,26 @@ import { Linkedin, Twitter, Facebook, Mail, Phone, MapPin } from "lucide-react";
 
 const Footer = () => {
   const industrialLinks = [
+    { name: "FDI Industrial Land", href: "/industrial/foreign-direct-investment" },
+    { name: "Telangana Industrial", href: "/industrial/telangana" },
+    { name: "Andhra Pradesh Industrial", href: "/industrial/andhra-pradesh" },
+    { name: "Karnataka Industrial", href: "/industrial/karnataka" },
     { name: "Project 1 - Active Pharma", href: "/industrial#project1" },
     { name: "Project 2 - Active Pharma", href: "/industrial#project2" },
     { name: "Project 3 - Formulation", href: "/industrial#project3" },
-    { name: "Private Funding (₹500 Cr)", href: "/industrial" },
+    { name: "Private Funding", href: "/industrial" },
     { name: "Equity Funding", href: "/industrial" },
   ];
 
   const realEstateLinks = [
+    { name: "Telangana Properties", href: "/real-estate/telangana" },
+    { name: "Andhra Pradesh Properties", href: "/real-estate/andhra-pradesh" },
+    { name: "Karnataka Properties", href: "/real-estate/karnataka" },
     { name: "Farmlands", href: "/real-estate" },
     { name: "Commercial Lands", href: "/real-estate" },
     { name: "Open Plots", href: "/real-estate" },
     { name: "Villa Plots", href: "/real-estate" },
     { name: "Apartment Flats", href: "/real-estate" },
-    { name: "Resale Flats", href: "/real-estate" },
   ];
 
   const insuranceLinks = [

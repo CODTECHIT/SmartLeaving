@@ -121,7 +121,7 @@ export default function Home() {
       </section>
 
       {/* Trust Indicators Section */}
-      <section className="py-12 md:py-24 bg-slate-900 text-white relative overflow-hidden">
+      <section className="py-10 md:py-16 bg-slate-900 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-accent/5 opacity-40 z-0" />
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIj48ZmlsdGVyIGlkPSJub2lzZSI+PGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9IjAuNjUiIG51bU9jdGF2ZXM9IjMiIHN0aXRjaFRpbGVzPSJzdGl0Y2giLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ0cmFuc3BhcmVudCIvPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNub2lzZSkiIG9wYWNpdHk9IjAuMDUiLz48L3N2Zz4=')] opacity-20 z-10" />
         <div className="section-container relative z-10">
@@ -148,8 +148,8 @@ export default function Home() {
       </section>
 
       {/* Case Studies / Projects */}
-      <section className="section-container py-16 md:py-32 bg-white">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-20 gap-12">
+      <section className="section-container py-12 md:py-20 bg-white">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-16 gap-8">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -203,15 +203,15 @@ export default function Home() {
       </section>
 
       {/* Strategic Process */}
-      <section className="py-16 md:py-32 bg-slate-950 text-white overflow-hidden relative">
+      <section className="py-12 md:py-20 bg-slate-950 text-white overflow-hidden relative">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-accent/5 blur-[200px] rounded-full z-0 opacity-40" />
         <div className="section-container relative z-10">
-          <div className="text-center mb-12 md:mb-24">
+          <div className="text-center mb-12 md:mb-16">
             <span className="subheading !text-slate-500">The Methodology</span>
             <h2 className="text-4xl md:text-7xl font-black mb-10 tracking-tighter text-white leading-tight">Strategic Execution</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-24">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
             {processSteps.map((step, index) => (
               <motion.div
                 key={index}
@@ -273,13 +273,13 @@ export default function Home() {
       </section>
 
       {/* Final CTA */}
-      <section className="section-container pb-16 md:pb-32">
+      <section className="section-container pb-12 md:pb-20">
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="bg-slate-900 rounded-[4rem] p-16 md:p-32 text-center relative overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.2)] border border-white/5"
+          className="bg-slate-900 rounded-[4rem] p-12 md:p-24 text-center relative overflow-hidden shadow-[0_50px_100px_rgba(0,0,0,0.2)] border border-white/5"
         >
           <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-accent/5 opacity-50 z-0" />
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIj48ZmlsdGVyIGlkPSJub2lzZSI+PGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9IjAuNjUiIG51bU9jdGF2ZXM9IjMiIHN0aXRjaFRpbGVzPSJzdGl0Y2giLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ0cmFuc3BhcmVudCIvPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNub2lzZSkiIG9wYWNpdHk9IjAuMDUiLz48L3N2Zz4=')] opacity-20 z-0" />
