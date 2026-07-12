@@ -15,6 +15,7 @@ const Hero = () => {
           className="object-cover"
           priority
           sizes="100vw"
+          unoptimized
         />
         {/* Advanced Multi-layered Overlay for Depth with Navy Tint */}
         <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/70 to-transparent z-10" />
